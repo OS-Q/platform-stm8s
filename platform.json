@@ -22,25 +22,25 @@
       "package": "framework-arduinoststm8",
       "script": "builder/frameworks/arduino.py"
     },
-    "spl": {
-      "package": "framework-ststm8spl",
+    "SPL": {
+      "package": "framework-N8",
       "script": "builder/frameworks/spl.py"
     }
   },
   "packages": {
-     "toolchain-sdcc": {
-      "type": "toolchain",
-      "version": "~1.30804.10766"
-    },
     "framework-arduinoststm8": {
       "type": "framework",
       "optional": true,
       "version": "0.40.181216"
     },
-    "framework-ststm8spl": {
+    "framework-N8": {
       "type": "framework",
       "optional": true,
-      "version": "0.20301.181217"
+      "version": "https://github.com/OS-Q/N8.git"
+    },
+    "toolchain-sdcc": {
+      "type": "toolchain",
+      "version": "~1.30804.10766"
     },
     "tool-stm8binutils": {
       "type": "uploader",
