@@ -22,7 +22,7 @@
       "package": "framework-arduinoststm8",
       "script": "builder/frameworks/arduino.py"
     },
-    "SPL": {
+    "spl": {
       "package": "framework-N8",
       "script": "builder/frameworks/spl.py"
     }
