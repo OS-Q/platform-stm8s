@@ -4,7 +4,7 @@
   "description": "STM8开发平台",
   "url": "https://www.st.com/en/microcontrollers/stm8-8-bit-mcus.html",
   "homepage": "https://github.com/OS-Q/H2",
-  "license": "Apache-2.0",
+  "license": "MIT",
   "engines": {
     "platformio": "<5"
   },
@@ -20,7 +20,7 @@
   ],
   "frameworks": {
     "arduino": {
-      "package": "framework-arduinoststm8",
+      "package": "framework-N7",
       "script": "builder/frameworks/arduino.py"
     },
     "spl": {
@@ -29,10 +29,10 @@
     }
   },
   "packages": {
-    "framework-arduinoststm8": {
+    "framework-N7": {
       "type": "framework",
       "optional": true,
-      "version": "0.40.181216"
+      "version": "https://github.com/OS-Q/N7.git"
     },
     "framework-N8": {
       "type": "framework",
