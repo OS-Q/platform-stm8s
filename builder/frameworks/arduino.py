@@ -1,13 +1,3 @@
-"""
-Arduino
-
-Arduino Wiring-based Framework allows writing cross-platform software to
-control devices attached to a wide range of Arduino boards to create all
-kinds of creative coding, interactive objects, spaces or physical experiences.
-
-http://arduino.cc/en/Reference/HomePage
-"""
-
 from os.path import isdir, join
 
 from SCons.Script import DefaultEnvironment
@@ -16,7 +6,7 @@ env = DefaultEnvironment()
 platform = env.PioPlatform()
 board_config = env.BoardConfig()
 
-FRAMEWORK_DIR = platform.get_package_dir("framework-arduinoststm8")
+FRAMEWORK_DIR = platform.get_package_dir("framework-N7")
 assert isdir(FRAMEWORK_DIR)
 
 env.Append(
