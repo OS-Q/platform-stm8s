@@ -20,7 +20,7 @@
       "serial"
     ]
   },
-  "name": "sduino UNO (STM8S105K6)",
-  "url": "https://github.com/roybaer/sduino_uno",
-  "vendor": "sduino"
+  "name": "STM8S105K6",
+  "url": "http://www.OS-Q.com/boards/H2/STM8S105K6",
+  "vendor": "OS-Q"
 }

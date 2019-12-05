@@ -20,7 +20,7 @@
       "serial"
     ]
   },
-  "name": "ST STM8S105K4T6 Breakout Board",
-  "url": "https://github.com/TG9541/stm8ef/wiki/Breakout-Boards#stm8s105k4t6-breakout-board",
-  "vendor": "ST"
+  "name": "STM8S105K4",
+  "url": "http://www.OS-Q.com/boards/H2/STM8S105K4",
+  "vendor": "OS-Q"
 }

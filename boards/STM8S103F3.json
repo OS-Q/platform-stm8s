@@ -20,7 +20,7 @@
         "stlinkv2"
     ]
   },
-  "name": "ST STM8S103F3 Breakout Board",
-  "url": "https://tenbaht.github.io/sduino/hardware/stm8blue/",
-  "vendor": "ST"
+  "name": "STM8S103F3",
+  "url": "http://www.OS-Q.com/boards/H2/STM8S103F3",
+  "vendor": "OS-Q"
 }

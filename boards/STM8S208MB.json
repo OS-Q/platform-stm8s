@@ -20,7 +20,7 @@
       "serial"
     ]
   },
-  "name": "sduino MB (STM8S208MBT6B)",
-  "url": "https://github.com/roybaer/sduino_mb",
-  "vendor": "sduino"
+  "name": "STM8S208MB",
+  "url": "http://www.OS-Q.com/boards/H2/STM8S208MB",
+  "vendor": "OS-Q"
 }
