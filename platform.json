@@ -25,6 +25,10 @@
     "spl": {
       "package": "framework-N09",
       "script": "builder/frameworks/spl.py"
+    },
+    "arduino": {
+      "package": "framework-N10",
+      "script": "builder/frameworks/arduino.py"
     }
   },
   "packages": {
@@ -32,6 +36,11 @@
       "type": "framework",
       "optional": true,
       "version": "https://github.com/OS-Q/N09.git"
+    },
+    "framework-N10": {
+      "type": "framework",
+      "optional": true,
+      "version": "https://github.com/OS-Q/N10.git"
     },
     "toolchain-sdcc": {
       "type": "toolchain",
