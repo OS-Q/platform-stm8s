@@ -7,6 +7,25 @@
     "mcu": "stm8s103f3p6",
     "variant": "standard"
   },
+  "debug": {
+    "openocd_target": "stm8s",
+    "tools": {
+      "stlink": {
+        "default": true,
+        "server": {
+          "arguments": [
+            "-f",
+            "scripts/interface/stlink.cfg",
+            "-f",
+            "scripts/target/stm8s.cfg"
+          ],
+          "executable": "bin/openocd",
+          "package": "tool-openocd"
+        },
+        "onboard": true
+      }
+    }
+  },
   "frameworks": [
     "arduino",
     "spl"
@@ -14,10 +33,11 @@
   "upload": {
     "maximum_ram_size": 1024,
     "maximum_size": 8192,
-    "protocol": "serial",
+    "protocol": "stlink",
     "protocols": [
-        "serial",
-        "stlinkv2"
+      "serial",
+      "stlink",
+      "stlinkv2"
     ]
   },
   "name": "STM8S103F3",

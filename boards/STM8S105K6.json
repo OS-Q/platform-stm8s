@@ -7,6 +7,25 @@
     "mcu": "stm8s105k6t6",
     "variant": "s8uno"
   },
+  "debug": {
+    "openocd_target": "stm8s",
+    "tools": {
+      "stlink": {
+        "default": true,
+        "server": {
+          "arguments": [
+            "-f",
+            "scripts/interface/stlink.cfg",
+            "-f",
+            "scripts/target/stm8s.cfg"
+          ],
+          "executable": "bin/openocd",
+          "package": "tool-openocd"
+        },
+        "onboard": true
+      }
+    }
+  },
   "frameworks": [
     "arduino",
     "spl"
@@ -14,10 +33,11 @@
   "upload": {
     "maximum_ram_size": 2048,
     "maximum_size": 32768,
-    "protocol": "serial",
+    "protocol": "stlink",
     "protocols": [
-      "stlinkv2",
-      "serial"
+      "serial",
+      "stlink",
+      "stlinkv2"
     ]
   },
   "name": "STM8S105K6",
