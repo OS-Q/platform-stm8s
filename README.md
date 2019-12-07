@@ -1,14 +1,14 @@
 ﻿# [Platform H2](https://github.com/OS-Q/H2)
 
-[![sites](http://182.61.61.133//resources/OS-Q.png)](http://www.OS-Q.com)
 
-#### 关于架构：[OS-Q](https://github.com/OS-Q)
+[![sites](http://182.61.61.133/link/resources/OSQ.png)](http://www.OS-Q.com)
 
-[EDGE-Q](https://github.com/OS-Q/EDGE-Q) -> Q[4] -> M[12] -> W[52] -> D[365] -> H[24] -> N[60] -> S[60]
+#### 关于系统架构：[OS-Q](https://github.com/OS-Q)
+#### 归属边缘体系：[EDGE-Q](https://github.com/EDGE-Q)
 
 ### [Platform描述](https://github.com/OS-Q/H2/wiki) 
 
-[Platform H2](https://github.com/OS-Q/H2)基于PlatformIO平台，用于STM8开发
+[Platform H2](https://github.com/OS-Q/H2)基于PlatformIO平台，用于[STM8](https://github.com/sochub/STM8)平台
 
 ### [OS-Q = Open Solutions | Open Source |  Operating System ](http://www.OS-Q.com/H2)
 ####  2019-11-3
