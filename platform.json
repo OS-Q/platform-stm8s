@@ -1,7 +1,7 @@
 {
-  "name": "H2",
-  "title": "H2",
-  "description": "H02 for STM8",
+  "name": "H02",
+  "title": "H02",
+  "description": "H02: STM8",
   "url": "https://www.st.com/en/microcontrollers/stm8-8-bit-mcus.html",
   "homepage": "http://www.OS-Q.com/H02",
   "license": "MIT",
@@ -10,8 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/OS-Q/H2.git"
+    "url": "https://github.com/OS-Q/H02.git"
   },
+  "authors": [{
+    "name": "qitas",
+    "email": "qitas@qitas.cn",
+    "url": "https://www.OS-Q.com"
+}],
+  "keywords": "OS-Q ,STM8, arduino ",
   "version": "1.0.0",
   "packageRepositories": [
     "http://182.61.61.133/link/toolchain/manifest.json",
