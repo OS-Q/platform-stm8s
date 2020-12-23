@@ -1,69 +1,66 @@
 {
-  "name": "H02",
-  "title": "H02",
-  "description": "H02: STM8S",
-  "url": "https://www.st.com/en/microcontrollers/stm8-8-bit-mcus.html",
-  "homepage": "http://www.OS-Q.com/H02",
-  "license": "MIT",
+  "name": "ststm8",
+  "title": "ST STM8",
+  "description": "The STM8 is an 8-bit microcontroller family by STMicroelectronics an extended variant of the ST7 microcontroller architecture. STM8 microcontrollers are particularly low cost for a full-featured 8-bit microcontroller.",
+  "homepage": "https://www.st.com/en/microcontrollers/stm8-8-bit-mcus.html",
+  "license": "Apache-2.0",
+  "keywords": [
+      "dev-platform",
+      "STMicroelectronics",
+      "STM8",
+      "8-bit"
+  ],
   "engines": {
-    "platformio": "<5"
+    "platformio": "^5"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/OS-Q/H02.git"
+    "url": "https://github.com/platformio/platform-ststm8.git"
   },
-  "authors": [{
-    "name": "qitas",
-    "email": "qitas@qitas.cn",
-    "url": "https://www.OS-Q.com"
-}],
-  "keywords": "OS-Q ,STM8, arduino ",
-  "version": "1.0.0",
-  "packageRepositories": [
-    "http://182.61.61.133/link/toolchain/manifest.json",
-    "http://182.61.61.133/link/framework/manifest.json",
-    "http://182.61.61.133/link/platformio.json",
-    "http://182.61.61.133/link/platform.json",
-    "http://dl.platformio.org/packages/manifest.json",
-    "https://dl.bintray.com/platformio/dl-packages/manifest.json"
-  ],
+  "version": "1.0.2",
   "frameworks": {
-    "spl": {
-      "package": "framework-N09",
-      "script": "builder/frameworks/spl.py"
-    },
     "arduino": {
-      "package": "framework-N10",
+      "package": "framework-arduinoststm8",
       "script": "builder/frameworks/arduino.py"
+    },
+    "spl": {
+      "package": "framework-ststm8spl",
+      "script": "builder/frameworks/spl.py"
     }
   },
   "packages": {
-    "framework-N09": {
-      "type": "framework",
-      "optional": true,
-      "version": "https://github.com/OS-Q/N09.git"
-    },
-    "framework-N10": {
-      "type": "framework",
-      "optional": true,
-      "version": "https://github.com/OS-Q/N10.git"
-    },
-    "toolchain-sdcc": {
+      "toolchain-sdcc": {
       "type": "toolchain",
+      "owner": "platformio",
       "version": "~1.30804.10766"
+    },
+    "framework-arduinoststm8": {
+      "type": "framework",
+      "optional": true,
+      "owner": "platformio",
+      "version": "0.40.181216"
+    },
+    "framework-ststm8spl": {
+      "type": "framework",
+      "optional": true,
+      "owner": "platformio",
+      "version": "0.20301.181217"
     },
     "tool-stm8binutils": {
       "type": "uploader",
+      "owner": "platformio",
       "version": "0.230.0"
     },
     "tool-stm8tools": {
       "type": "uploader",
       "optional": true,
+      "owner": "platformio",
       "version": "~0.40.181218"
     },
     "tool-openocd": {
       "type": "uploader",
       "optional": true,
+      "owner": "platformio",
       "version": "~2.1000.0"
     }
   }
