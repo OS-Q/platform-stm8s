@@ -6,7 +6,7 @@
     "cpu": "stm8",
     "mcu": "stm8s208mbt6",
     "variant": "mb208"
-  }, 
+  },
   "debug": {
     "openocd_target": "stm8s",
     "tools": {
@@ -33,7 +33,7 @@
   "upload": {
     "maximum_ram_size": 6144,
     "maximum_size": 131072,
-    "protocol": "stlink",
+    "protocol": "stlinkv2",
     "protocols": [
       "serial",
       "stlink",
@@ -41,6 +41,6 @@
     ]
   },
   "name": "STM8S208MB",
-  "url": "http://www.OS-Q.com/boards/H02/STM8S208MB",
+  "url": "http://www.OS-Q.com/P02/STM8S208MB",
   "vendor": "OS-Q"
 }
