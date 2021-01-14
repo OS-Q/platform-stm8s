@@ -30,7 +30,7 @@ env = DefaultEnvironment()
 platform = env.PioPlatform()
 board_config = env.BoardConfig()
 
-FRAMEWORK_DIR = platform.get_package_dir("framework-arduinoststm8")
+FRAMEWORK_DIR = platform.get_package_dir("framework-A02")
 assert isdir(FRAMEWORK_DIR)
 
 env.Append(

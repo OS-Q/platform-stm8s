@@ -14,18 +14,26 @@
   "engines": {
     "platformio": "^5"
   },
+  "packageRepositories": [
+    "http://182.61.61.133/link/toolchain/manifest.json",
+    "http://182.61.61.133/link/toolchain/openocd.json",
+    "http://182.61.61.133/link/framework/manifest.json",
+    "http://182.61.61.133/link/platformio.json",
+    "http://dl.platformio.org/packages/manifest.json",
+    "http://182.61.61.133/link/platform.json"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/OS-Q/P02.git"
   },
-  "version": "1.0.2",
+  "version": "1.0.3",
   "frameworks": {
     "arduino": {
-      "package": "framework-arduinoststm8",
+      "package": "framework-A02",
       "script": "builder/frameworks/arduino.py"
     },
     "spl": {
-      "package": "framework-ststm8spl",
+      "package": "framework-N09",
       "script": "builder/frameworks/spl.py"
     }
   },
@@ -35,17 +43,17 @@
       "owner": "platformio",
       "version": "~1.30804.10766"
     },
-    "framework-arduinoststm8": {
+    "framework-A02": {
       "type": "framework",
       "optional": true,
-      "owner": "platformio",
-      "version": "0.40.181216"
+      "owner": "OS-Q",
+      "version": "https://github.com/OS-Q/A02.git"
     },
-    "framework-ststm8spl": {
+    "framework-N09": {
       "type": "framework",
       "optional": true,
-      "owner": "platformio",
-      "version": "0.20301.181217"
+      "owner": "OS-Q",
+      "version": "https://github.com/OS-Q/N09.git"
     },
     "tool-stm8binutils": {
       "type": "uploader",
