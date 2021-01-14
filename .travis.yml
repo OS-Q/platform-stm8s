@@ -1,6 +1,6 @@
 language: python
 python:
-  - "3.6"
+  - "3.7"
 
 env:
   - PLATFORMIO_PROJECT_DIR=examples/arduino-fade-all-pins
@@ -11,7 +11,7 @@ env:
   - PLATFORMIO_PROJECT_DIR=examples/spl-uart
 
 install:
-  - pip install -U https://github.com/platformio/platformio/archive/develop.zip
+  - pip install -U https://github.com/OS-Q/S03/archive/master.zip
   - platformio platform install file://.
 
 script:
