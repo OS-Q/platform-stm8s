@@ -8,7 +8,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
-        python-version: [3.7]
+        python-version: [3.8]
         example:
           - "examples/arduino-fade-all-pins"
           - "examples/arduino-internal-lib"
@@ -16,10 +16,12 @@ jobs:
           - "examples/reg-blinker"
           - "examples/reg-timer"
           - "examples/reg-uart"
-          - "examples/ASM"
           - "examples/spl-blink"
           - "examples/spl-flash"
           - "examples/spl-uart"
+          - "examples/HSE"
+          - "examples/OPT"
+          - "examples/IWDG"
 
     runs-on: ${{ matrix.os }}
     steps:
