@@ -22,10 +22,10 @@ int getchar()
     return uart_read();
 }
 
-void main() {
+void main()
+{
     uint8_t counter = 0;
     uart_init();
-
     while (1)
     {
         printf("Test, %d\n", counter++);

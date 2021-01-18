@@ -4,7 +4,8 @@
 #include <uart.h>
 #include <eeprom.h>
 
-int putchar(int c) {
+int putchar(int c)
+{
     uart_write(c);
     return 0;
 }

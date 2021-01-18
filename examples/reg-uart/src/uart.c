@@ -80,7 +80,6 @@ int uart_puts(const char *s) {
         while(!(UART1_SR & UART_SR_TXE));
         UART1_DR = s[i];
     }
-
     return(i);
 }
 
@@ -101,12 +100,14 @@ void uart_init() {
     UART1_BRR1 = 0x08;
 }
 
-int main() {
+int main()
+{
     port_init();
     system_clock_init();
     uart_init();
 
-    while(1) {
+    while(1)
+    {
         uart_puts("STM8S at 115200 baud. Welcome and keep up the good work!\r\n");
         __delay();
     }
