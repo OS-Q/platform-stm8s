@@ -1,13 +1,4 @@
 
-"""
-SPL
-
-Library that enables developers to easily exploit all the functions of the STM8
-microcontrollers to address a wide range of applications.
-
-https://www.st.com/en/embedded-software/stsw-stm8069.html
-"""
-
 import sys
 from os.path import basename, isdir, isfile, join
 
