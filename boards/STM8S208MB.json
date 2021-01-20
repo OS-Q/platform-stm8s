@@ -28,7 +28,7 @@
   },
   "frameworks": [
     "arduino",
-    "spl"
+    "native"
   ],
   "upload": {
     "maximum_ram_size": 6144,
