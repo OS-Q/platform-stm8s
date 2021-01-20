@@ -62,13 +62,7 @@ env.Append(
     ]
 )
 
-
-#
-# Target: Build Core Library
-#
-
 env.BuildSources(
-    join("$BUILD_DIR", "SPL"),
     join(FRAMEWORK_DIR,"src"),
     src_filter=["-<*>"] + [" +<%s>" % f for f in get_core_files()]
 )

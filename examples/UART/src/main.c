@@ -8,6 +8,7 @@
 /*
  * Redirect stdout to UART
  */
+
 int putchar(int c)
 {
     uart_write(c);

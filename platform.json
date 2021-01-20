@@ -8,8 +8,7 @@
   "keywords": [
       "OS-Q",
       "dev-platform",
-      "STMicroelectronics",
-      "STM8",
+      "STM8S",
       "MCU",
       "8-bit"
   ],
@@ -31,7 +30,7 @@
       "package": "A02",
       "script": "builder/frameworks/arduino.py"
     },
-    "spl": {
+    "native": {
       "package": "N02",
       "script": "builder/frameworks/native.py"
     }

@@ -158,8 +158,4 @@ else:
 
 AlwaysBuild(env.Alias("upload", target_firm, upload_actions))
 
-#
-# Setup default targets
-#
-
 Default([target_buildprog, target_size])
