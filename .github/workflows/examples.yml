@@ -25,6 +25,7 @@ jobs:
           - "examples/ISR_Timer"
           - "examples/Flash"
           - "examples/ADC"
+          - "examples/app"
 
     runs-on: ${{ matrix.os }}
     steps:

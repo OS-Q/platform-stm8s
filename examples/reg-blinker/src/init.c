@@ -5,7 +5,8 @@
  * All unused pins are output in push-pull configuration,
  * low, interrupts disabled, speed slow (<= 2MHz)
  */
-void port_init() {
+void port_init()
+{
     PA_ODR = 0x00;
     PA_DDR = 0xFF;
     PA_CR1 = 0xFF;
@@ -32,7 +33,8 @@ void port_init() {
  * Reconfigure System clock, use high speed internal oscillator,
  * disable prescaler.
  */
-void clk_init() {
+void clk_init()
+{
     nointerrupts();
     CLK_ICKR = 0;
     CLK_ICKR |= CLK_ICKR_HSIEN;
@@ -45,7 +47,6 @@ void clk_init() {
     CLK_CCOR = 0;
     CLK_HSITRIMR = 0;
     CLK_SWIMCCR = 0;
-
     CLK_SWCR = 0;
     CLK_SWCR |= CLK_SWCR_SWEN;
     while (0 != (CLK_SWCR & CLK_SWCR_SWBSY));

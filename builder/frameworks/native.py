@@ -10,7 +10,7 @@ env = DefaultEnvironment()
 platform = env.PioPlatform()
 board_config = env.BoardConfig()
 
-FRAMEWORK_DIR = platform.get_package_dir("framework-N09")
+FRAMEWORK_DIR = platform.get_package_dir("N02")
 assert isdir(FRAMEWORK_DIR)
 
 
@@ -28,7 +28,7 @@ def get_core_files():
 
     result = exec_command(
         command,
-        cwd=join(FRAMEWORK_DIR, "Libraries", "STM8S_StdPeriph_Driver", "inc"),
+        cwd=join(FRAMEWORK_DIR,"inc"),
         env=env['ENV']
     )
 
@@ -57,7 +57,7 @@ env.Append(
     ],
 
     CPPPATH=[
-        join(FRAMEWORK_DIR, "Libraries", "STM8S_StdPeriph_Driver", "inc"),
+        join(FRAMEWORK_DIR,"inc"),
         "$PROJECTSRC_DIR",
     ]
 )
@@ -69,6 +69,6 @@ env.Append(
 
 env.BuildSources(
     join("$BUILD_DIR", "SPL"),
-    join(FRAMEWORK_DIR, "Libraries", "STM8S_StdPeriph_Driver", "src"),
+    join(FRAMEWORK_DIR,"src"),
     src_filter=["-<*>"] + [" +<%s>" % f for f in get_core_files()]
 )
