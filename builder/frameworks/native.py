@@ -63,6 +63,7 @@ env.Append(
 )
 
 env.BuildSources(
+    join("$BUILD_DIR","native"),
     join(FRAMEWORK_DIR,"src"),
     src_filter=["-<*>"] + [" +<%s>" % f for f in get_core_files()]
 )

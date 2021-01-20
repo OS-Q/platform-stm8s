@@ -34,10 +34,6 @@ env.Append(
     ]
 )
 
-#
-# Target: Build Core Library
-#
-
 libs = []
 
 if "build.variant" in env.BoardConfig():
@@ -48,12 +44,12 @@ if "build.variant" in env.BoardConfig():
         ]
     )
     libs.append(env.BuildLibrary(
-        join("$BUILD_DIR", "FrameworkArduinoVariant"),
+        join("$BUILD_DIR", "ArduinoVariant"),
         join(FRAMEWORK_DIR, "variants", env.BoardConfig().get("build.variant"))
     ))
 
 libs.append(env.BuildLibrary(
-    join("$BUILD_DIR", "FrameworkArduino"),
+    join("$BUILD_DIR", "Arduino"),
     join(FRAMEWORK_DIR, "cores", env.BoardConfig().get("build.core"))
 ))
 
