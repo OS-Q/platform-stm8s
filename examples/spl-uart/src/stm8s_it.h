@@ -16,14 +16,14 @@
   *
   *        http://www.st.com/software_license_agreement_liberty_v2
   *
-  * Unless required by applicable law or agreed to in writing, software 
-  * distributed under the License is distributed on an "AS IS" BASIS, 
+  * Unless required by applicable law or agreed to in writing, software
+  * distributed under the License is distributed on an "AS IS" BASIS,
   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   * See the License for the specific language governing permissions and
   * limitations under the License.
   *
   ******************************************************************************
-  */ 
+  */
 
 /* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef __STM8S_IT_H
@@ -38,7 +38,7 @@
 /* Exported functions ------------------------------------------------------- */
 #ifdef _COSMIC_
  void _stext(void); /* RESET startup routine */
- INTERRUPT void NonHandledInterrupt(void);
+INTERRUPT void NonHandledInterrupt(void);
 #endif /* _COSMIC_ */
 
 // SDCC patch: requires separate handling for SDCC (see below)
@@ -167,7 +167,7 @@
  INTERRUPT_HANDLER(UART4_TX_IRQHandler, 17);              /* UART4 TX */
  INTERRUPT_HANDLER(UART4_RX_IRQHandler, 18);              /* UART4 RX */
 #endif /* (STM8AF622x) */
- 
+
  INTERRUPT_HANDLER(I2C_IRQHandler, 19);                   /* I2C */
 
 #if defined(STM8S105) || defined(STM8S005) ||  defined (STM8AF626x)

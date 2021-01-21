@@ -3,27 +3,15 @@
 #include "stm8s_it.h"    /* SDCC patch: required by SDCC for interrupts */
 #include "main.h"
 
-/**
-  * @addtogroup UART1_Interrupt
-  * @{
-  */
-/* Private typedef -----------------------------------------------------------*/
 typedef enum { FAILED = 0, PASSED = !FAILED} TestStatus;
 /* Private variables ---------------------------------------------------------*/
 uint8_t TxBuffer1[] = "UART1 Interrupt Example: UART1 -> UART3 using Interrupt";
-uint8_t TxBuffer2[] = "UART1 Interrupt Example: UART3 -> UART1 using Interrupt";
 uint8_t RxBuffer1[RxBufferSize1];
-uint8_t RxBuffer2[RxBufferSize2];
 __IO uint8_t TxCounter1 = 0x00;
-__IO uint8_t TxCounter2 = 0x00;
 __IO uint8_t RxCounter1 = 0x00;
-__IO uint8_t RxCounter2 = 0x00;
 uint8_t NbrOfDataToTransfer1 = TxBufferSize1;
-uint8_t NbrOfDataToTransfer2 = TxBufferSize2;
 uint8_t NbrOfDataToRead1 = RxBufferSize1;
-uint8_t NbrOfDataToRead2 = RxBufferSize2;
 __IO TestStatus TransferStatus1 = FAILED;
-__IO TestStatus TransferStatus2 = FAILED;
 
 /* Private function prototypes -----------------------------------------------*/
 TestStatus Buffercmp(uint8_t* pBuffer1, uint8_t* pBuffer2, uint16_t BufferLength);
@@ -56,17 +44,11 @@ void main(void)
     }
 
     /* Check the received data with the send ones */
-    TransferStatus1 = Buffercmp(TxBuffer2, RxBuffer1, RxBufferSize1);
+    TransferStatus1 = Buffercmp(TxBuffer1, RxBuffer1, RxBufferSize1);
     /* TransferStatus1 = PASSED, if the data transmitted from UART3 and
        received by UART1 are the same */
     /* TransferStatus1 = FAILED, if the data transmitted from UART3 and
        received by UART1 are different */
-    TransferStatus2 = Buffercmp(TxBuffer1, RxBuffer2, RxBufferSize2);
-    /* TransferStatus2 = PASSED, if the data transmitted from UART1 and
-       received by UART3 are the same */
-    /* TransferStatus2 = FAILED, if the data transmitted from UART1 and
-       received by UART3 are different */
-
     while(1){}
 }
 
@@ -91,7 +73,6 @@ static void UART_Config(void)
 {
   /* Deinitializes the UART1 and UART3 peripheral */
     UART1_DeInit();
-    UART3_DeInit();
     /* UART1 and UART3 configuration -------------------------------------------------*/
     /* UART1 and UART3 configured as follow:
         - BaudRate = 9600 baud
@@ -104,17 +85,8 @@ static void UART_Config(void)
     /* Configure the UART1 */
     UART1_Init((uint32_t)9600, UART1_WORDLENGTH_8D, UART1_STOPBITS_1, UART1_PARITY_NO,
                 UART1_SYNCMODE_CLOCK_DISABLE, UART1_MODE_TXRX_ENABLE);
-
     /* Enable UART1 Transmit interrupt*/
     UART1_ITConfig(UART1_IT_TXE, ENABLE);
-
-    /* Configure the UART3 */
-    UART3_Init((uint32_t)9600, UART3_WORDLENGTH_8D, UART3_STOPBITS_1, UART3_PARITY_NO,
-                UART3_MODE_TXRX_ENABLE);
-
-    /* Enable UART3 Receive interrupt */
-    UART3_ITConfig(UART3_IT_RXNE_OR, ENABLE);
-
     /* Enable general interrupts */
     enableInterrupts();
 }
