@@ -47,6 +47,7 @@ inline void port_init() {
  * Reconfigure System clock, use high speed internal oscillator,
  * disable prescaler.
  */
+
 void system_clock_init()
 {
     nointerrupts();
@@ -68,12 +69,7 @@ void system_clock_init()
     interrupts();
 }
 
-/**
- * Write string to uart.
- * @param
- *
- * @return bytes written.
- */
+
 int uart_puts(const char *s) {
     uint8_t i;
     for(i = 0; i < strlen(s); i++) {
@@ -83,10 +79,9 @@ int uart_puts(const char *s) {
     return(i);
 }
 
-/**
- * Initialize UART with fixed settings: 115200 8N1
- */
-void uart_init() {
+
+void uart_init()
+{
     /* Configure RX and TX pins */
     PD_DDR = 0xBF;
     PD_CR1 = 0xFF;

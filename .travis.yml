@@ -6,10 +6,10 @@ env:
   - PLATFORMIO_PROJECT_DIR=examples/arduino-fade-all-pins
   - PLATFORMIO_PROJECT_DIR=examples/arduino-internal-lib
   - PLATFORMIO_PROJECT_DIR=examples/arduino-ping-hc04
-  - PLATFORMIO_PROJECT_DIR=examples/spl-blink
-  - PLATFORMIO_PROJECT_DIR=examples/spl-flash
-  - PLATFORMIO_PROJECT_DIR=examples/spl-uart
-  - PLATFORMIO_PROJECT_DIR=examples/reg-blinker
+  - PLATFORMIO_PROJECT_DIR=examples/native-blink
+  - PLATFORMIO_PROJECT_DIR=examples/native-flash
+  - PLATFORMIO_PROJECT_DIR=examples/native-uart
+  - PLATFORMIO_PROJECT_DIR=examples/reg-blink
   - PLATFORMIO_PROJECT_DIR=examples/reg-timer
   - PLATFORMIO_PROJECT_DIR=examples/reg-uart
 
