@@ -5,13 +5,20 @@
 
 typedef enum { FAILED = 0, PASSED = !FAILED} TestStatus;
 /* Private variables ---------------------------------------------------------*/
-uint8_t TxBuffer1[] = "UART1 Interrupt Example: UART1 -> UART3 using Interrupt";
+uint8_t TxBuffer1[] = "UART1 Interrupt Example: Interrupt";
+uint8_t TxBuffer2[] = "UART1 Interrupt Example: Interrupt";
 uint8_t RxBuffer1[RxBufferSize1];
+uint8_t RxBuffer2[RxBufferSize2];
 __IO uint8_t TxCounter1 = 0x00;
+__IO uint8_t TxCounter2 = 0x00;
 __IO uint8_t RxCounter1 = 0x00;
+__IO uint8_t RxCounter2 = 0x00;
 uint8_t NbrOfDataToTransfer1 = TxBufferSize1;
+uint8_t NbrOfDataToTransfer2 = TxBufferSize2;
 uint8_t NbrOfDataToRead1 = RxBufferSize1;
+uint8_t NbrOfDataToRead2 = RxBufferSize2;
 __IO TestStatus TransferStatus1 = FAILED;
+__IO TestStatus TransferStatus2 = FAILED;
 
 /* Private function prototypes -----------------------------------------------*/
 TestStatus Buffercmp(uint8_t* pBuffer1, uint8_t* pBuffer2, uint16_t BufferLength);

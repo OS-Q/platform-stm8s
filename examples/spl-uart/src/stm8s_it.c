@@ -16,14 +16,14 @@
   *
   *        http://www.st.com/software_license_agreement_liberty_v2
   *
-  * Unless required by applicable law or agreed to in writing, software 
-  * distributed under the License is distributed on an "AS IS" BASIS, 
+  * Unless required by applicable law or agreed to in writing, software
+  * distributed under the License is distributed on an "AS IS" BASIS,
   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   * See the License for the specific language governing permissions and
   * limitations under the License.
   *
   ******************************************************************************
-  */ 
+  */
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm8s_it.h"
@@ -104,7 +104,7 @@ INTERRUPT_HANDLER(TLI_IRQHandler, 0)
   * @retval
   * None
   */
-INTERRUPT_HANDLER(AWU_IRQHandler, 1)	
+INTERRUPT_HANDLER(AWU_IRQHandler, 1)
 {
   /* In order to detect unexpected events during development,
      it is recommended to set a breakpoint on the following instruction.
@@ -411,10 +411,10 @@ INTERRUPT_HANDLER(I2C_IRQHandler, 19)
   * @retval
   * None
   */
- INTERRUPT_HANDLER(UART2_TX_IRQHandler, 20)
+INTERRUPT_HANDLER(UART2_TX_IRQHandler, 20)
 {
     /* In order to detect unexpected events during development,
-       it is recommended to set a breakpoint on the following instruction.
+      it is recommended to set a breakpoint on the following instruction.
     */
 }
 
@@ -424,10 +424,10 @@ INTERRUPT_HANDLER(I2C_IRQHandler, 19)
   * @retval
   * None
   */
- INTERRUPT_HANDLER(UART2_RX_IRQHandler, 21)
+INTERRUPT_HANDLER(UART2_RX_IRQHandler, 21)
 {
     /* In order to detect unexpected events during development,
-       it is recommended to set a breakpoint on the following instruction.
+      it is recommended to set a breakpoint on the following instruction.
     */
 }
 #endif /* STM8S105*/
@@ -439,12 +439,12 @@ INTERRUPT_HANDLER(I2C_IRQHandler, 19)
   * @retval
   * None
   */
- INTERRUPT_HANDLER(UART3_TX_IRQHandler, 20)
+INTERRUPT_HANDLER(UART3_TX_IRQHandler, 20)
 {
     /* Write one byte to the transmit data register */
     UART3_SendData8(TxBuffer2[IncrementVar_TxCounter2()]);
 
-	 if (GetVar_TxCounter2() == GetVar_NbrOfDataToTransfer2())
+    if (GetVar_TxCounter2() == GetVar_NbrOfDataToTransfer2())
     {
         /* Disable the UART3 Transmit interrupt */
         UART3_ITConfig(UART3_IT_TXE, DISABLE);
