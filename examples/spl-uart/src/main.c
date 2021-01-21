@@ -38,11 +38,10 @@ static void UART_Config(void);
   */
 void main(void)
 {
-  /* CLK configuration -----------------------------------------*/
-  CLK_Config();
-
-  /* UART configuration -----------------------------------------*/
-  UART_Config();
+    /* CLK configuration -----------------------------------------*/
+    CLK_Config();
+    /* UART configuration -----------------------------------------*/
+    UART_Config();
 
     /* Wait until end of transmission from UART1 to UART3 */
     while (GetVar_RxCounter2() < GetVar_NbrOfDataToTransfer1())
@@ -68,8 +67,7 @@ void main(void)
     /* TransferStatus2 = FAILED, if the data transmitted from UART1 and
        received by UART3 are different */
 
-    while (1)
-  {}
+    while(1){}
 }
 
 /**
@@ -96,12 +94,12 @@ static void UART_Config(void)
     UART3_DeInit();
     /* UART1 and UART3 configuration -------------------------------------------------*/
     /* UART1 and UART3 configured as follow:
-          - BaudRate = 9600 baud
-          - Word Length = 8 Bits
-          - One Stop Bit
-          - No parity
-          - Receive and transmit enabled
-          - UART1 Clock disabled
+        - BaudRate = 9600 baud
+        - Word Length = 8 Bits
+        - One Stop Bit
+        - No parity
+        - Receive and transmit enabled
+        - UART1 Clock disabled
      */
     /* Configure the UART1 */
     UART1_Init((uint32_t)9600, UART1_WORDLENGTH_8D, UART1_STOPBITS_1, UART1_PARITY_NO,
@@ -111,7 +109,7 @@ static void UART_Config(void)
     UART1_ITConfig(UART1_IT_TXE, ENABLE);
 
     /* Configure the UART3 */
- 		UART3_Init((uint32_t)9600, UART3_WORDLENGTH_8D, UART3_STOPBITS_1, UART3_PARITY_NO,
+    UART3_Init((uint32_t)9600, UART3_WORDLENGTH_8D, UART3_STOPBITS_1, UART3_PARITY_NO,
                 UART3_MODE_TXRX_ENABLE);
 
     /* Enable UART3 Receive interrupt */

@@ -1,8 +1,9 @@
 #include <stdint.h>
 #include <stdio.h>
-#include <stm8s.h>
-#include <uart.h>
-#include <delay.h>
+
+#include "stm8s.h"
+#include "uart.h"
+#include "delay.h"
 
 #define V_REF 3.3
 

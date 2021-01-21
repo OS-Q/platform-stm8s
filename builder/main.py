@@ -3,8 +3,7 @@ import sys
 from os.path import join
 from platform import system
 
-from SCons.Script import (AlwaysBuild, COMMAND_LINE_TARGETS, Default,
-                        DefaultEnvironment)
+from SCons.Script import (AlwaysBuild, COMMAND_LINE_TARGETS, Default,DefaultEnvironment)
 
 
 env = DefaultEnvironment()
