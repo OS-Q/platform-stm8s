@@ -64,7 +64,7 @@
 // #include "stm8s_beep.h"
 
 #if !defined(STM8S903) && !defined(STM8AF622x)   /* SDCC patch: see https://github.com/tenbaht/sduino/tree/master/STM8S_StdPeriph_Driver */
-#include "stm8s_tim2.h"
+// #include "stm8s_tim2.h"
 #endif /* (STM8S903) || (STM8AF622x) */
 
 #if defined(STM8S208) || defined(STM8S207) || defined(STM8S007) ||defined(STM8S105) ||\
@@ -73,7 +73,7 @@
 #endif /* (STM8S208) || (STM8S207) || (STM8S007) || (STM8S105) */
 
 #if !defined(STM8S903) && !defined(STM8AF622x)   /* SDCC patch: see https://github.com/tenbaht/sduino/tree/master/STM8S_StdPeriph_Driver */
-#include "stm8s_tim4.h"
+// #include "stm8s_tim4.h"
 #endif /* (STM8S903) || (STM8AF622x) */
 #if defined(STM8S903) || defined(STM8AF622x)     /* SDCC patch: see https://github.com/tenbaht/sduino/tree/master/STM8S_StdPeriph_Driver */
 #include "stm8s_tim5.h"
