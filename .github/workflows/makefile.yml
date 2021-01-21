@@ -23,6 +23,6 @@ jobs:
     - name: Install SDCC
       run: sudo apt-get install -y sdcc
 
-    - name: Build examples
+    - name: make examples
       run: make
-      working-directory: examples
+      working-directory: examples/ADC

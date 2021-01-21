@@ -1,3 +1,6 @@
 *.pyc
 *.pio/
 *.vscode/
+*.ihx*
+*.map
+*.lk
