@@ -5,8 +5,8 @@
 
 typedef enum { FAILED = 0, PASSED = !FAILED} TestStatus;
 /* Private variables ---------------------------------------------------------*/
-uint8_t TxBuffer1[] = "UART1 Interrupt Example: Interrupt";
-uint8_t TxBuffer2[] = "UART1 Interrupt Example: Interrupt";
+uint8_t TxBuffer1[] = "UART1 Interrupt Example";
+uint8_t TxBuffer2[] = "UART1 Interrupt Example";
 uint8_t RxBuffer1[RxBufferSize1];
 uint8_t RxBuffer2[RxBufferSize2];
 __IO uint8_t TxCounter1 = 0x00;
@@ -37,14 +37,12 @@ void main(void)
     CLK_Config();
     /* UART configuration -----------------------------------------*/
     UART_Config();
-
     /* Wait until end of transmission from UART1 to UART3 */
     while (GetVar_RxCounter2() < GetVar_NbrOfDataToTransfer1())
     {
     }
     /* Enable UART1 Receive and UART3 Transmit interrupt */
     UART1_ITConfig(UART1_IT_RXNE_OR, ENABLE);
-    UART3_ITConfig(UART3_IT_TXE, ENABLE);
     /* Wait until end of transmission from UART3 to UART1 */
     while (GetVar_RxCounter1() < GetVar_NbrOfDataToTransfer2())
     {
@@ -288,10 +286,6 @@ void assert_failed(uint8_t* file, uint32_t line)
   }
 }
 #endif
-
-/**
-  * @}
-  */
 
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
