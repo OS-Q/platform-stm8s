@@ -24,7 +24,7 @@ void main()
     clk_init();
     while(1)
     {
-        PB_ODR ^= 0x20;
+        GPIOB->ODR ^= 0x20;
         delay_ms(500);
     }
 }
