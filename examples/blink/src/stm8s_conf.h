@@ -6,7 +6,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "stm8s.h"
 
-#include "stm8s_test.h"
+#include "test.h"
 
 
 #endif /* __STM8S_CONF_H */
