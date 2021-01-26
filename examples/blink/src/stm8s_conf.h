@@ -8,8 +8,8 @@
 
 #include "stm8s_adc1.h"
 #include "stm8s_clk.h"
-#include "stm8s_spi.h"
-#include "stm8s_uart1.h"
+// #include "stm8s_spi.h"
+// #include "stm8s_uart1.h"
 
 /* Exported types ------------------------------------------------------------*/
 /* Exported constants --------------------------------------------------------*/
