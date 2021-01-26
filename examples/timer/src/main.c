@@ -6,8 +6,7 @@
 ****版权：OS-Q
 *******************************************************************************/
 #include <stdint.h>
-#include "stm8s.h"
-#include "init.h"
+#include "main.h"
 
 volatile uint32_t time_ms_cnt=0;
 

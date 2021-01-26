@@ -8,9 +8,9 @@
 #include <stdint.h>
 #include <stdio.h>
 
-#include "stm8s.h"
-#include "init.h"
-#include "delay.h"
+#include "main.h"
+// #include "init.h"
+// #include "delay.h"
 
 /*******************************************************************************
 **函数信息 ：
