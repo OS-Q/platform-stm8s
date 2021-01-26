@@ -13,9 +13,6 @@ jobs:
           - "examples/arduino-fade-all-pins"
           - "examples/arduino-internal-lib"
           - "examples/arduino-ping-hc04"
-          - "examples/native-blink"
-          - "examples/native-flash"
-          - "examples/native-uart"
           - "examples/reg-blink"
           - "examples/reg-timer"
           - "examples/reg-uart"
@@ -25,7 +22,6 @@ jobs:
           - "examples/ISR_Timer"
           - "examples/Flash"
           - "examples/ADC"
-          - "examples/app"
 
     runs-on: ${{ matrix.os }}
     steps:

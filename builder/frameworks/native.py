@@ -15,10 +15,6 @@ assert isdir(FRAMEWORK_DIR)
 
 
 def get_core_files():
-    if not isfile(join(env.subst("$PROJECTSRC_DIR"), "stm8s_conf.h")):
-        print("Warning! Couldn't find stm8s_conf.h file!")
-        return []
-
     command = [
         env.subst("$CC"), "-m%s" % board_config.get("build.cpu"),
         "-D%s" % board_config.get("build.mcu")[0:8].upper(),
@@ -50,11 +46,6 @@ def get_core_files():
 
 env.Append(
     CFLAGS=["--opt-code-size"],
-
-    CPPDEFINES=[
-        "USE_STDPERIPH_DRIVER",
-        "USE_STDINT"
-    ],
 
     CPPPATH=[
         join(FRAMEWORK_DIR,"inc"),
