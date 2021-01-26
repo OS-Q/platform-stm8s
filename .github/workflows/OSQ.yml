@@ -10,12 +10,12 @@ jobs:
         os: [ubuntu-latest, windows-latest, macos-latest]
         python-version: [3.7]
         example:
-          - "examples/arduino-fade-all-pins"
-          - "examples/arduino-internal-lib"
-          - "examples/arduino-ping-hc04"
+          # - "examples/arduino-fade-all-pins"
+          # - "examples/arduino-internal-lib"
+          # - "examples/arduino-ping-hc04"
           - "examples/blink"
-          - "examples/reg-timer"
-          - "examples/reg-uart"
+          # - "examples/reg-timer"
+          # - "examples/reg-uart"
           # - "examples/HSE"
           # - "examples/OPT"
           # - "examples/IWDG"

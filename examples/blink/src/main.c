@@ -8,8 +8,8 @@
 #include <stdint.h>
 #include <stdio.h>
 #include "stm8s.h"
-// #include "init.h"
-#include "stm8s_clk.h"
+
+// #include "stm8s_clk.h"
 
 /*******************************************************************************
 **函数信息 ：
@@ -19,13 +19,14 @@
 *******************************************************************************/
 void main()
 {
-    port_init();
-    clk_init();
-    while (1)
-    {
-        PB_ODR ^= 0x20;
-        delay_ms(500);
-    }
+    CLK_DeInit();
+    // port_init();
+    // clk_init();
+    // while (1)
+    // {
+    //     PB_ODR ^= 0x20;
+    //     delay_ms(500);
+    // }
 }
 
 #ifdef USE_FULL_ASSERT
