@@ -1,10 +1,10 @@
 {
   "name": "P02",
   "title": "Platform P02",
-  "description": "STMicroelectronics base-line 8-bit microcontroller family STM8S003.",
+  "description": "STMicroelectronics base-line 8-bit microcontroller family STM8S.",
   "homepage": "https://www.st.com/en/microcontrollers/stm8-8-bit-mcus.html",
   "license": "Apache-2.0",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "engines": {
     "platformio": "^5"
   },
@@ -59,7 +59,6 @@
     },
     "tool-stm8tools": {
       "type": "uploader",
-      "owner": "OS-Q",
       "optional": true,
       "version": "~0.40.181218"
     },
