@@ -8,7 +8,7 @@
 #include <stdint.h>
 #include <stdio.h>
 #include "stm8s.h"
-#include "init.h"
+// #include "init.h"
 
 /*******************************************************************************
 **函数信息 ：
@@ -18,13 +18,13 @@
 *******************************************************************************/
 void main()
 {
-    // port_init();
-    // clk_init();
-    // while (1)
-    // {
-    //     PB_ODR ^= 0x20;
-    //     delay_ms(500);
-    // }
+    port_init();
+    clk_init();
+    while (1)
+    {
+        PB_ODR ^= 0x20;
+        delay_ms(500);
+    }
 }
 
 void assert_failed(uint8_t* file, uint32_t line)
