@@ -6,7 +6,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "stm8s.h"
 
-#include "clk.h"
+#include "stm8s_clk.h"
 // #include "stm8s_spi.h"
 // #include "stm8s_uart1.h"
 
