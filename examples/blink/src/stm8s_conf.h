@@ -3,7 +3,7 @@
 
 #include "stm8s.h"
 
-#include "stm8s_test.h"
+#include "delay.h"
 
 
 #endif
