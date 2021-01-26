@@ -47,6 +47,10 @@ def get_core_files():
 env.Append(
     CFLAGS=["--opt-code-size"],
 
+    CPPDEFINES=[
+        "USE_STDPERIPH_DRIVER",
+        "USE_STDINT"
+    ],
     CPPPATH=[
         join(FRAMEWORK_DIR,"inc"),
         "$PROJECTSRC_DIR",

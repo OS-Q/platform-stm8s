@@ -1,9 +1,9 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <string.h>
-#include <stm8s.h>
+
+#include "stm8s.h"
 #include "uart.h"
-#include "delay.h"
 
 /*
  * Redirect stdout to UART

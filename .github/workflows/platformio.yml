@@ -13,7 +13,7 @@ jobs:
           - "examples/arduino-fade-all-pins"
           - "examples/arduino-internal-lib"
           - "examples/arduino-ping-hc04"
-          - "examples/reg-blink"
+          - "examples/blink"
           - "examples/reg-timer"
           - "examples/reg-uart"
           - "examples/HSE"
