@@ -7,14 +7,15 @@
 /*
  * Redirect stdout to LCD
  */
-int putchar(int c) {
+int putchar(int c)
+{
     LCD_putc(c);
     return 0;
 }
 
-void main() {
+void main()
+{
     uint8_t counter = 0;
-
     LCD_init();
     LCD_goto(1, 0);
     printf("Hello,  World!");

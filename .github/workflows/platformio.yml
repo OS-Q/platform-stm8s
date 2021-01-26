@@ -1,4 +1,4 @@
-name: P02
+name: OS-Q
 
 on: [push, pull_request]
 
@@ -41,6 +41,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install -U https://github.com/OS-Q/S03/archive/master.zip
           platformio platform install file://.
-      - name: Build P02
+      - name: Build PlatformIO
         run: |
           platformio run -d ${{ matrix.example }}

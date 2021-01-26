@@ -4,6 +4,6 @@
 
 ### [简介](https://github.com/OS-Q/P02/wiki)
 
-[P02](https://github.com/OS-Q/P02) 基于[PlatformIO](https://github.com/platformio/platformio-core) 框架，用于[STM8](https://www.st.com/zh/microcontrollers-microprocessors/stm8-8-bit-mcus.html)开发
+[P02](https://github.com/OS-Q/P02) 基于[PlatformIO](https://github.com/platformio/platformio-core) 框架
 
 ### [Q = (OpenSource & OperatingSystem) ](http://www.OS-Q.com)
