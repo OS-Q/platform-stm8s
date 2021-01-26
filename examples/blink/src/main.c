@@ -27,4 +27,11 @@ void main()
     // }
 }
 
+void assert_failed(uint8_t* file, uint32_t line)
+{
+    while (1)
+    {
+    }
+}
+
 /*---------------------------(C) COPYRIGHT 2021 OS-Q -------------------------*/
