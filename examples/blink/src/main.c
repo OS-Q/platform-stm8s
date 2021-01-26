@@ -5,12 +5,11 @@
 ****作者：Qitas
 ****版权：OS-Q
 *******************************************************************************/
-// #include <stdint.h>
-// #include <stdio.h>
+#include <stdint.h>
+#include <stdio.h>
 
-// #include "stm8s.h"
-
-#include "delay.h"
+#include "stm8s.h"
+#include "init.h"
 
 /*******************************************************************************
 **函数信息 ：
@@ -21,13 +20,13 @@
 void main()
 {
     delay_ms(500);
-    // port_init();
-    // clk_init();
-    // while (1)
-    // {
-    //     PB_ODR ^= 0x20;
-    //     delay_ms(500);
-    // }
+    port_init();
+    clk_init();
+    while (1)
+    {
+        PB_ODR ^= 0x20;
+        delay_ms(500);
+    }
 }
 
 
