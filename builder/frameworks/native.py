@@ -26,7 +26,7 @@ from os.path import basename, isdir, isfile, join
 
 from SCons.Script import DefaultEnvironment
 
-from platformio.util import exec_command
+from platformio.proc import exec_command
 
 env = DefaultEnvironment()
 platform = env.PioPlatform()
@@ -39,6 +39,7 @@ assert isdir(FRAMEWORK_DIR)
 def get_core_files():
     if not isfile(join(env.subst("$PROJECTSRC_DIR"), "stm8s_conf.h")):
         print("Warning! Couldn't find stm8s_conf.h file!")
+        return []
 
     command = [
         env.subst("$CC"), "-m%s" % board_config.get("build.cpu"),
@@ -49,7 +50,7 @@ def get_core_files():
 
     result = exec_command(
         command,
-        cwd=join(FRAMEWORK_DIR,"inc"),
+        cwd=join(FRAMEWORK_DIR, "Libraries", "STM8S_StdPeriph_Driver", "inc"),
         env=env['ENV']
     )
 
@@ -78,7 +79,7 @@ env.Append(
     ],
 
     CPPPATH=[
-        join(FRAMEWORK_DIR, "inc"),
+        join(FRAMEWORK_DIR, "Libraries", "STM8S_StdPeriph_Driver", "inc"),
         "$PROJECTSRC_DIR",
     ]
 )
@@ -90,6 +91,6 @@ env.Append(
 
 env.BuildSources(
     join("$BUILD_DIR", "SPL"),
-    join(FRAMEWORK_DIR, "src"),
+    join(FRAMEWORK_DIR, "Libraries", "STM8S_StdPeriph_Driver", "src"),
     src_filter=["-<*>"] + [" +<%s>" % f for f in get_core_files()]
 )
