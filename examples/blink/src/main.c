@@ -9,6 +9,7 @@
 #include <stdio.h>
 #include "stm8s.h"
 // #include "init.h"
+#include "stm8s_clk.h"
 
 /*******************************************************************************
 **函数信息 ：
@@ -27,11 +28,13 @@ void main()
     }
 }
 
+#ifdef USE_FULL_ASSERT
 void assert_failed(uint8_t* file, uint32_t line)
 {
     while (1)
     {
     }
 }
+#endif
 
 /*---------------------------(C) COPYRIGHT 2021 OS-Q -------------------------*/
