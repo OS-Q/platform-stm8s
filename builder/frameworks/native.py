@@ -49,6 +49,7 @@ env.Append(
 
     CPPDEFINES=[
         "USE_STDPERIPH_DRIVER",
+        "USE_REG_DRIVER",
         "USE_STDINT"
     ],
 
