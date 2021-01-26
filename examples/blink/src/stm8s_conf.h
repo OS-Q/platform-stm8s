@@ -5,7 +5,6 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm8s.h"
-#include "init.h"
 
 #include "stm8s_clk.h"
 #include "stm8s_exti.h"
