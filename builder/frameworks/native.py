@@ -1,25 +1,3 @@
-# Copyright 2018-present PlatformIO <contact@platformio.org>
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#    http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-
-"""
-SPL
-
-Library that enables developers to easily exploit all the functions of the STM8
-microcontrollers to address a wide range of applications.
-
-https://www.st.com/en/embedded-software/stsw-stm8069.html
-"""
 
 import sys
 from os.path import basename, isdir, isfile, join
@@ -50,7 +28,7 @@ def get_core_files():
 
     result = exec_command(
         command,
-        cwd=join(FRAMEWORK_DIR, "Libraries", "STM8S_StdPeriph_Driver", "inc"),
+        cwd=join(FRAMEWORK_DIR, "Libraries", "inc"),
         env=env['ENV']
     )
 
@@ -79,7 +57,7 @@ env.Append(
     ],
 
     CPPPATH=[
-        join(FRAMEWORK_DIR, "Libraries", "STM8S_StdPeriph_Driver", "inc"),
+        join(FRAMEWORK_DIR, "Libraries", "inc"),
         "$PROJECTSRC_DIR",
     ]
 )
@@ -91,6 +69,6 @@ env.Append(
 
 env.BuildSources(
     join("$BUILD_DIR", "SPL"),
-    join(FRAMEWORK_DIR, "Libraries", "STM8S_StdPeriph_Driver", "src"),
+    join(FRAMEWORK_DIR, "Libraries", "src"),
     src_filter=["-<*>"] + [" +<%s>" % f for f in get_core_files()]
 )
