@@ -28,7 +28,7 @@ def get_core_files():
 
     result = exec_command(
         command,
-        cwd=join(FRAMEWORK_DIR, "Libraries", "inc"),
+        cwd=join(FRAMEWORK_DIR, "Libraries", "STM8S_StdPeriph_Driver", "inc"),
         env=env['ENV']
     )
 
@@ -57,7 +57,7 @@ env.Append(
     ],
 
     CPPPATH=[
-        join(FRAMEWORK_DIR, "Libraries", "inc"),
+        join(FRAMEWORK_DIR, "Libraries", "STM8S_StdPeriph_Driver", "inc"),
         "$PROJECTSRC_DIR",
     ]
 )
@@ -68,7 +68,7 @@ env.Append(
 #
 
 env.BuildSources(
-    join("$BUILD_DIR", "SPL"),
-    join(FRAMEWORK_DIR, "Libraries", "src"),
+    join("$BUILD_DIR", "Native"),
+    join(FRAMEWORK_DIR, "Libraries", "STM8S_StdPeriph_Driver", "src"),
     src_filter=["-<*>"] + [" +<%s>" % f for f in get_core_files()]
 )
