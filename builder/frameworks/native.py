@@ -15,10 +15,6 @@ assert isdir(FRAMEWORK_DIR)
 
 
 def get_core_files():
-    if not isfile(join(env.subst("$PROJECTSRC_DIR"), "stm8s_conf.h")):
-        print("Warning! Couldn't find stm8s_conf.h file!")
-        return []
-
     command = [
         env.subst("$CC"), "-m%s" % board_config.get("build.cpu"),
         "-D%s" % board_config.get("build.mcu")[0:8].upper(),
@@ -28,7 +24,7 @@ def get_core_files():
 
     result = exec_command(
         command,
-        cwd=join(FRAMEWORK_DIR, "Libraries", "STM8S_StdPeriph_Driver", "inc"),
+        cwd=join(FRAMEWORK_DIR, "Libraries", "inc"),
         env=env['ENV']
     )
 
@@ -57,7 +53,7 @@ env.Append(
     ],
 
     CPPPATH=[
-        join(FRAMEWORK_DIR, "Libraries", "STM8S_StdPeriph_Driver", "inc"),
+        join(FRAMEWORK_DIR, "Libraries", "inc"),
         "$PROJECTSRC_DIR",
     ]
 )
@@ -69,6 +65,6 @@ env.Append(
 
 env.BuildSources(
     join("$BUILD_DIR", "Native"),
-    join(FRAMEWORK_DIR, "Libraries", "STM8S_StdPeriph_Driver", "src"),
+    join(FRAMEWORK_DIR, "Libraries", "src"),
     src_filter=["-<*>"] + [" +<%s>" % f for f in get_core_files()]
 )
