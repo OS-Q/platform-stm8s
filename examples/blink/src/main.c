@@ -5,12 +5,12 @@
 ****作者：Qitas
 ****版权：OS-Q
 *******************************************************************************/
-#include <stdint.h>
-#include <stdio.h>
+// #include <stdint.h>
+// #include <stdio.h>
 
 // #include "stm8s.h"
 
-// #include "stm8s_test.h"
+#include "stm8s_test.h"
 
 /*******************************************************************************
 **函数信息 ：
