@@ -8,7 +8,7 @@ char i;
 // the setup routine runs once when you press reset:
 void setup()
 {
-  // declare all pin to be an output:
+    // declare all pin to be an output:
     for (i=0; i<NUM_DIGITAL_PINS; i++) pinMode(i,OUTPUT);
 }
 
