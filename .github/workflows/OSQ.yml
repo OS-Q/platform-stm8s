@@ -15,12 +15,9 @@ jobs:
           # - "examples/arduino-ping-hc04"
           - "examples/blink"
           - "examples/timer"
-          - "examples/uart1"
-          # - "examples/reg-uart"
+          - "examples/UART1"
           # - "examples/HSE"
           # - "examples/OPT"
-          # - "examples/IWDG"
-          # - "examples/ISR_Timer"
           # - "examples/Flash"
           # - "examples/ADC"
 
