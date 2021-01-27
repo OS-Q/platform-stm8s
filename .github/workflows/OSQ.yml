@@ -18,6 +18,7 @@ jobs:
           - "examples/native-flash"
           - "examples/native-eeprom"
           - "examples/arduino-fade-pins"
+          - "examples/arduino-hc04"
           - "examples/blink"
           - "examples/timer"
           - "examples/uart"
