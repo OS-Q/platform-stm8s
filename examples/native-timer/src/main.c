@@ -1,22 +1,20 @@
 /*******************************************************************************
 ****版本：V1.0.0
-****平台：STM8S003
+****平台：STM8S
 ****日期：2021-01-12
 ****作者：Qitas
 ****版权：OS-Q
 *******************************************************************************/
-#include <stdint.h>
-#include "stm8s.h"
-#include "init.h"
+// #include <stdint.h>
+#include "main.h"
 
-unsigned char i=0;
-
+volatile uint32_t time_ms_cnt=0;
 
 void led_init(void)
 {
-    PB_DDR|=0x20;
-    PB_CR1|=0x20;
-    PB_CR2|=0x00;
+    GPIOB->DDR|=0x20;
+    GPIOB->CR1|=0x20;
+    GPIOB->CR2|=0x00;
 }
 
 /*******************************************************************************
@@ -27,13 +25,18 @@ void led_init(void)
 *******************************************************************************/
 int main()
 {
-    port_init();
+    // pin_init();
     led_init();
     clk_init();
-    tim4_init();
+    tim4_init(125);
+    // tim1_init(16,1000);
     while (1)
     {
-        __asm nop __endasm;
+        if(time_ms_cnt%1000==0)
+        {
+            GPIOB->ODR ^= 0x20;
+            delay_ms(10);
+        }
     }
 }
 
@@ -43,20 +46,20 @@ int main()
 **输入参数 ：
 **输出参数 ：
 *******************************************************************************/
-void tim4_isr(void) __interrupt(INT_TIM4)
+#ifdef __TIMER1_H
+void tim1_isr(void) __interrupt(11)
 {
-    i++;
-    TIM4_SR=0x00;
-    if(i==61)
-    {
-        PB_ODR^=0x20;
-        i=0;
-    }
-    // PB_ODR ^= 0x20;
-    // // Clear interrupt flag
-    // TIM4_SR &= ~TIM4_SR_UIF;
-    // // Rewrite counter, calculated value is 125
-    // TIM4_CNTR = 0xFF - 123;
+    time_ms_cnt++;
+    TIM1->SR1=0x00;
 }
+#endif /*__TIMER1_H*/
+#ifdef __TIMER4_H
+void tim4_isr(void) __interrupt(23)
+{
+    time_ms_cnt++;
+    TIM4->SR1 &= ~TIM4_SR1_UIF;
+    // TIM4->SR1=0x00;
+}
+#endif /*__TIMER4_H*/
 
 /*---------------------------(C) COPYRIGHT 2021 OS-Q -------------------------*/

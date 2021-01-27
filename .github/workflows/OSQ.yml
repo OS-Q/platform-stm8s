@@ -10,16 +10,12 @@ jobs:
         os: [ubuntu-latest, windows-latest, macos-latest]
         python-version: [3.7]
         examples:
-          # - "examples/arduino-fade-all-pins"
-          # - "examples/arduino-internal-lib"
-          # - "examples/arduino-ping-hc04"
+          - "examples/native-blink"
+          - "examples/native-timer"
+          - "examples/native-uart1"
           - "examples/blink"
           - "examples/timer"
-          - "examples/UART1"
-          # - "examples/HSE"
-          # - "examples/OPT"
-          # - "examples/Flash"
-          # - "examples/ADC"
+          - "examples/uart"
 
     runs-on: ${{ matrix.os }}
     steps:

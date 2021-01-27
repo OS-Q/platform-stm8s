@@ -12,7 +12,8 @@
 __at(ID_ADDR) const uint8_t id = 42;
 __at(USER_DATA_ADDR) uint8_t data[8];
 
-int putchar(int c) {
+int putchar(int c)
+{
     uart_write(c);
     return 0;
 }
@@ -41,10 +42,10 @@ static inline void flash_busy_wait() {
     while (!(FLASH_IAPSR & (1 << FLASH_IAPSR_EOP)));
 }
 
-void main() {
+void main()
+{
     uart_init();
     printf("\nID = %d. Data[0] = %d\n", id, data[0]);
-
     flash_unlock();
     for (int i = 0; i < sizeof(data); i++) {
         /* same as _MEM_(USER_DATA_ADDR + i) += id + i */

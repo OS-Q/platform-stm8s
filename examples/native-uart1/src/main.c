@@ -73,6 +73,7 @@ void uart1_isr(void) __interrupt(18)
     // Clear interrupt flag
     UART1->SR = 0xDF;
 }
+#endif /*__UART1_H*/
 
 #ifdef __PIN_H
 void pin_isr(void) __interrupt(6)
@@ -80,6 +81,6 @@ void pin_isr(void) __interrupt(6)
     // Clear interrupt flag
     // UART1->SR = 0xDF;
 }
-
 #endif /*__PIN_H*/
+
 /*---------------------------(C) COPYRIGHT 2021 OS-Q -------------------------*/

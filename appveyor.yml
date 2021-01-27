@@ -2,9 +2,9 @@ build: off
 environment:
 
   matrix:
-    - PLATFORMIO_PROJECT_DIR: "examples/blink"
-    - PLATFORMIO_PROJECT_DIR: "examples/timer"
-    - PLATFORMIO_PROJECT_DIR: "examples/UART1"
+    - PLATFORMIO_PROJECT_DIR: "examples/native-blink"
+    - PLATFORMIO_PROJECT_DIR: "examples/native-timer"
+    - PLATFORMIO_PROJECT_DIR: "examples/native-uart1"
 
 install:
   - cmd: git submodule update --init --recursive
