@@ -25,13 +25,17 @@ void led_init(void)
 *******************************************************************************/
 int main()
 {
-    // port_init();
+    pin_init();
     led_init();
     clk_init();
     tim1_init(16,1000);
     while (1)
     {
-        if(time_ms_cnt%1000==0) GPIOB->ODR ^= 0x20;
+        if(time_ms_cnt%1000==0)
+        {
+            time_ms_cnt++;
+            GPIOB->ODR ^= 0x20;
+        }
     }
 }
 

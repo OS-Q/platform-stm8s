@@ -72,7 +72,8 @@ static void timer4_init() {
     interrupts();
 }
 
-int main() {
+int main()
+{
     port_init();
     clk_init();
     timer4_init();
