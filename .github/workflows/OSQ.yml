@@ -11,11 +11,13 @@ jobs:
         python-version: [3.7]
         examples:
           - "examples/native-adc"
+          - "examples/native-opt"
           - "examples/native-blink"
           - "examples/native-timer"
           - "examples/native-uart1"
           - "examples/native-flash"
           - "examples/native-eeprom"
+          - "examples/arduino-fade-pins"
           - "examples/blink"
           - "examples/timer"
           - "examples/uart"

@@ -4,6 +4,7 @@ python:
 
 env:
   - PLATFORMIO_PROJECT_DIR=examples/native-adc
+  - PLATFORMIO_PROJECT_DIR=examples/native-opt
   - PLATFORMIO_PROJECT_DIR=examples/native-blink
   - PLATFORMIO_PROJECT_DIR=examples/native-timer
   - PLATFORMIO_PROJECT_DIR=examples/native-uart1
