@@ -5,6 +5,7 @@
 #include "delay.h"
 #include "init.h"
 #include "uart.h"
+#include "tim1.h"
 #include "tim4.h"
 
 #endif

@@ -4,6 +4,7 @@
 #include "stm8s.h"
 #include "delay.h"
 #include "init.h"
+#include "tim1.h"
 
 #endif
 

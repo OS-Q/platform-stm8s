@@ -5,8 +5,10 @@
 ****作者：Qitas
 ****版权：OS-Q
 *******************************************************************************/
-#include <string.h>
 #include <stdint.h>
+#include <stdio.h>
+#include <string.h>
+
 #include "main.h"
 
 volatile uint32_t time_ms_cnt=0;
@@ -41,16 +43,8 @@ int main()
 void tim1_isr(void) __interrupt(11)
 {
     // time_ms_cnt++;
-    TIM1_SR1=0x00;
+    TIM1->SR1=0x00;
     GPIOB->ODR^=0x20;
-    // if(time_ms_cnt%60==0)
-    // {
-    //     PB_ODR^=0x20;
-    // }
-    // // Clear interrupt flag
-    // TIM4_SR &= ~TIM4_SR_UIF;
-    // // Rewrite counter, calculated value is 125
-    // TIM4_CNTR = 0xFF - 123;
 }
 
 /*******************************************************************************
@@ -62,15 +56,7 @@ void tim1_isr(void) __interrupt(11)
 void tim4_isr(void) __interrupt(23)
 {
     time_ms_cnt++;
-    TIM4_SR=0x00;
-    // if(time_ms_cnt%60==0)
-    // {
-    //     PB_ODR^=0x20;
-    // }
-    // // Clear interrupt flag
-    // TIM4_SR &= ~TIM4_SR_UIF;
-    // // Rewrite counter, calculated value is 125
-    // TIM4_CNTR = 0xFF - 123;
+    TIM4->SR=0x00;
 }
 
 /*---------------------------(C) COPYRIGHT 2021 OS-Q -------------------------*/
