@@ -7,10 +7,8 @@
 *******************************************************************************/
 #include <stdint.h>
 #include <stdio.h>
-
 #include "main.h"
-// #include "init.h"
-// #include "delay.h"
+
 
 /*******************************************************************************
 **函数信息 ：
@@ -22,10 +20,14 @@ void main()
 {
     pin_init();
     clk_init();
+    dog_init();
+    GPIOB->ODR ^= 0x20;
+    delay_ms(100);
     while(1)
     {
+        feed_dog();
         GPIOB->ODR ^= 0x20;
-        delay_ms(500);
+        delay_ms(600);
     }
 }
 

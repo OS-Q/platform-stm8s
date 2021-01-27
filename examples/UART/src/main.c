@@ -29,8 +29,11 @@ int main()
     uart_init();
     while(1)
     {
-        if(time_ms_cnt%1000==0) uart_puts("\r\nIt is running on B021 baud 115200.");
-        // delay_ms(5000);
+        if(time_ms_cnt%10000==0)
+        {
+            uart_puts("\r\nIt is running on B021 baud 115200.");
+            delay_ms(500);
+        }
     }
 }
 
@@ -40,23 +43,26 @@ int main()
 **输入参数 ：
 **输出参数 ：
 *******************************************************************************/
+#ifdef __TIMER1_H
 void tim1_isr(void) __interrupt(11)
 {
     // time_ms_cnt++;
     TIM1->SR1=0x00;
     GPIOB->ODR^=0x20;
 }
-
+#endif /*__TIMER1_H*/
 /*******************************************************************************
 **函数信息 ：
 **功能描述 ：
 **输入参数 ：
 **输出参数 ：
 *******************************************************************************/
+#ifdef __TIMER4_H
 void tim4_isr(void) __interrupt(23)
 {
     time_ms_cnt++;
-    TIM4->SR=0x00;
+    TIM4->SR1=0x00;
 }
+#endif /*__TIMER4_H*/
 
 /*---------------------------(C) COPYRIGHT 2021 OS-Q -------------------------*/

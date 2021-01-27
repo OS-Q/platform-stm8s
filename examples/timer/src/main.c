@@ -28,13 +28,15 @@ int main()
     pin_init();
     led_init();
     clk_init();
-    tim1_init(16,1000);
+    tim4_init();
+    // tim1_init(16,1000);
     while (1)
     {
         if(time_ms_cnt%1000==0)
         {
             time_ms_cnt++;
             GPIOB->ODR ^= 0x20;
+            delay_ms(100);
         }
     }
 }
@@ -45,11 +47,19 @@ int main()
 **输入参数 ：
 **输出参数 ：
 *******************************************************************************/
-
+#ifdef __TIMER1_H
 void tim1_isr(void) __interrupt(11)
 {
     time_ms_cnt++;
     TIM1->SR1=0x00;
 }
+#endif /*__TIMER1_H*/
+#ifdef __TIMER4_H
+void tim4_isr(void) __interrupt(23)
+{
+    time_ms_cnt++;
+    TIM4->SR1=0x00;
+}
+#endif /*__TIMER4_H*/
 
 /*---------------------------(C) COPYRIGHT 2021 OS-Q -------------------------*/
