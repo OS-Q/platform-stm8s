@@ -1,35 +1,107 @@
+/*******************************************************************************
+****版本：V1.0.0
+****平台：STM8S
+****日期：2021-01-12
+****作者：Qitas
+****版权：OS-Q
+*******************************************************************************/
 #include <stdint.h>
-#include <stdio.h>
 #include <string.h>
+// #include <stdio.h>
 
-#include "stm8s.h"
-#include "uart.h"
+#include "main.h"
 
-/*
- * Redirect stdout to UART
- */
+volatile uint32_t time_ms_cnt=0;
 
-int putchar(int c)
+/*******************************************************************************
+**函数信息 ：
+**功能描述 ：
+**输入参数 ：
+**输出参数 ：
+*******************************************************************************/
+void pin_init()
 {
-    uart_write(c);
-    return 0;
+    GPIOA->ODR = 0x00;
+    GPIOA->DDR = 0xFF;
+    GPIOA->CR1 = 0xFF;
+    GPIOA->CR2 = 0x00;
+
+    GPIOB->ODR = 0x00;
+    GPIOB->DDR = 0xFF;
+    GPIOB->CR1 = 0xCF;
+    GPIOB->CR2 = 0x00;
+
+    GPIOC->ODR = 0x00;
+    GPIOC->DDR = 0xFF;
+    GPIOC->CR1 = 0xFF;
+    GPIOC->CR2 = 0x00;
+
+    GPIOD->ODR = 0x00;
+    GPIOD->DDR = 0xFF;
+    GPIOD->CR1 = 0xFF;
+    GPIOD->CR2 = 0x00;
 }
 
-/*
- * Redirect stdin to UART
- */
-int getchar()
+/*******************************************************************************
+**函数信息 ：
+**功能描述 ：
+**输入参数 ：
+**输出参数 ：
+*******************************************************************************/
+int main()
 {
-    return uart_read();
-}
-
-void main()
-{
-    uint8_t counter = 0;
-    uart_init();
-    while (1)
+    pin_init();
+    clk_init();
+    tim4_init(125);
+    tim1_init(16000,500);
+    uart1_init();
+    dog_init();
+    feed_dog();
+    uart1_put("\r\nstart stm8s\r\n");
+    while(1)
     {
-        printf("Test, %d\n", counter++);
-        delay_ms(500);
+        if(time_ms_cnt%5000==0)
+        {
+            uart1_put("\r\nIt is running on STM8S baud 115200.");
+            // uart1_set(time_ms_cnt/100);
+            // printf("Test,%d\n",time_ms_cnt);
+            delay_ms(300);
+        }
     }
 }
+
+/*******************************************************************************
+**函数信息 ：
+**功能描述 ：
+**输入参数 ：
+**输出参数 ：
+*******************************************************************************/
+#ifdef __TIMER1_H
+void tim1_isr(void) __interrupt(11)
+{
+    // time_ms_cnt++;
+    TIM1->SR1 &= ~TIM1_SR1_UIF;
+    // TIM1->SR1=0x00;
+    GPIOB->ODR^=0x20;
+    feed_dog();
+}
+#endif /*__TIMER1_H*/
+
+#ifdef __TIMER4_H
+void tim4_isr(void) __interrupt(23)
+{
+    time_ms_cnt++;
+    TIM4->SR1 &= ~TIM4_SR1_UIF;
+    // TIM4->SR1=0x00;
+}
+#endif /*__TIMER4_H*/
+
+#ifdef __UART1_H
+void uart1_isr(void) __interrupt(18)
+{
+    // Clear interrupt flag
+    UART1->SR = 0xDF;
+}
+
+#endif /*__UART1_H*/
+/*---------------------------(C) COPYRIGHT 2021 OS-Q -------------------------*/

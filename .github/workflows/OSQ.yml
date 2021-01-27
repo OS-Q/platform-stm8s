@@ -9,12 +9,13 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
         python-version: [3.7]
-        example:
+        examples:
           # - "examples/arduino-fade-all-pins"
           # - "examples/arduino-internal-lib"
           # - "examples/arduino-ping-hc04"
           - "examples/blink"
           - "examples/timer"
+          - "examples/uart1"
           # - "examples/reg-uart"
           # - "examples/HSE"
           # - "examples/OPT"
@@ -39,4 +40,4 @@ jobs:
           platformio platform install file://.
       - name: Build OS-Q
         run: |
-          platformio run -d ${{ matrix.example }}
+          platformio run -d ${{ matrix.examples }}

@@ -5,10 +5,16 @@
 ****作者：Qitas
 ****版权：OS-Q
 *******************************************************************************/
-#include <stdint.h>
-#include <stdio.h>
+// #include <stdint.h>
+// #include <stdio.h>
 #include "main.h"
 
+void led_init(void)
+{
+    GPIOB->DDR|=0x20;
+    GPIOB->CR1|=0x20;
+    GPIOB->CR2|=0x00;
+}
 
 /*******************************************************************************
 **函数信息 ：
@@ -18,11 +24,11 @@
 *******************************************************************************/
 void main()
 {
-    pin_init();
+    led_init();
     clk_init();
     dog_init();
-    GPIOB->ODR ^= 0x20;
-    delay_ms(100);
+    // GPIOB->ODR ^= 0x20;
+    // delay_ms(100);
     while(1)
     {
         feed_dog();

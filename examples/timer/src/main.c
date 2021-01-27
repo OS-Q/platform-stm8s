@@ -5,7 +5,7 @@
 ****作者：Qitas
 ****版权：OS-Q
 *******************************************************************************/
-#include <stdint.h>
+// #include <stdint.h>
 #include "main.h"
 
 volatile uint32_t time_ms_cnt=0;
@@ -25,18 +25,17 @@ void led_init(void)
 *******************************************************************************/
 int main()
 {
-    pin_init();
+    // pin_init();
     led_init();
     clk_init();
-    tim4_init();
+    tim4_init(125);
     // tim1_init(16,1000);
     while (1)
     {
         if(time_ms_cnt%1000==0)
         {
-            time_ms_cnt++;
             GPIOB->ODR ^= 0x20;
-            delay_ms(100);
+            delay_ms(10);
         }
     }
 }
@@ -58,7 +57,8 @@ void tim1_isr(void) __interrupt(11)
 void tim4_isr(void) __interrupt(23)
 {
     time_ms_cnt++;
-    TIM4->SR1=0x00;
+    TIM4->SR1 &= ~TIM4_SR1_UIF;
+    // TIM4->SR1=0x00;
 }
 #endif /*__TIMER4_H*/
 
