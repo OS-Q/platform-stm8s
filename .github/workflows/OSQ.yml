@@ -13,6 +13,8 @@ jobs:
           - "examples/native-blink"
           - "examples/native-timer"
           - "examples/native-uart1"
+          - "examples/native-flash"
+          - "examples/native-eeprom"
           - "examples/blink"
           - "examples/timer"
           - "examples/uart"

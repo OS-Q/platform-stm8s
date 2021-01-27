@@ -6,6 +6,9 @@ env:
   - PLATFORMIO_PROJECT_DIR=examples/native-blink
   - PLATFORMIO_PROJECT_DIR=examples/native-timer
   - PLATFORMIO_PROJECT_DIR=examples/native-uart1
+  - PLATFORMIO_PROJECT_DIR=examples/native-flash
+  - PLATFORMIO_PROJECT_DIR=examples/native-eeprom
+  - PLATFORMIO_PROJECT_DIR=examples/blink
 
 install:
   - pip install -U https://github.com/OS-Q/S03/archive/master.zip

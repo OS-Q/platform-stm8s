@@ -8,6 +8,7 @@
 
 #include <stdio.h>
 #include <string.h>
+
 #include "main.h"
 
 /* Use last 64 bytes of flash for user data */
@@ -16,23 +17,36 @@
 
 /* Tell compiler where the variables are located.
  * Defining variable as const will place it in the firmware binary */
-__at(ID_ADDR) const uint8_t id = 42;
-__at(USER_DATA_ADDR) uint8_t data[8];
+__at(ID_ADDR) const uint8_t id = 0x30;
+__at(USER_DATA_ADDR) uint8_t data[16];
 
+void led_init(void)
+{
+    GPIOB->DDR|=0x20;
+    GPIOB->CR1|=0x20;
+    GPIOB->CR2|=0x00;
+}
 
 
 void main()
 {
+    char str[] = "Test Flash string\n";
+    int len = sizeof (str);
     clk_init();
+    pin_init();
     uart1_init(0,0);
-    // printf("\nID = %d. Data[0] = %d\n", id, data[0]);
     flash_unlock();
-    for (int i = 0; i < sizeof(data); i++)
+    for (int i = 0; i < len; i++)
     {
-        data[i] += id + i;
+        data[i] = str[i];
+        str[i] = 0 ;
     }
     flash_lock();
-    // printf("Data[0] = %d\n", data[0]);
+    for (int i = 0; i < len; i++)
+    {
+        str[i] = data[i];
+    }
+    uart1_put(str);
     while (1)
     {
         LED1_TOG;
