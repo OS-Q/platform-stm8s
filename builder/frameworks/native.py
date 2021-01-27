@@ -24,7 +24,7 @@ def get_core_files():
 
     result = exec_command(
         command,
-        cwd=join(FRAMEWORK_DIR, "Libraries", "inc"),
+        cwd=join(FRAMEWORK_DIR, "native", "inc"),
         env=env['ENV']
     )
 
@@ -54,7 +54,7 @@ env.Append(
     ],
 
     CPPPATH=[
-        join(FRAMEWORK_DIR, "Libraries", "inc"),
+        join(FRAMEWORK_DIR, "native", "inc"),
         "$PROJECTSRC_DIR",
     ]
 )
@@ -65,7 +65,7 @@ env.Append(
 #
 
 env.BuildSources(
-    join("$BUILD_DIR", "Native"),
-    join(FRAMEWORK_DIR, "Libraries", "src"),
+    join("$BUILD_DIR", "native"),
+    join(FRAMEWORK_DIR, "native", "src"),
     src_filter=["-<*>"] + [" +<%s>" % f for f in get_core_files()]
 )

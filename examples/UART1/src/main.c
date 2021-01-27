@@ -54,7 +54,7 @@ int main()
     clk_init();
     tim4_init(125);
     tim1_init(16000,500);
-    uart1_init();
+    uart1_init(0,0);
     dog_init();
     feed_dog();
     uart1_put("\r\nstart stm8s\r\n");
