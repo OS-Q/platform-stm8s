@@ -3,15 +3,9 @@ python:
   - "3.7"
 
 env:
-  - PLATFORMIO_PROJECT_DIR=examples/arduino-fade-all-pins
-  - PLATFORMIO_PROJECT_DIR=examples/arduino-internal-lib
-  - PLATFORMIO_PROJECT_DIR=examples/arduino-ping-hc04
-  - PLATFORMIO_PROJECT_DIR=examples/native-blink
-  - PLATFORMIO_PROJECT_DIR=examples/native-flash
-  - PLATFORMIO_PROJECT_DIR=examples/native-uart
-  - PLATFORMIO_PROJECT_DIR=examples/reg-blink
-  - PLATFORMIO_PROJECT_DIR=examples/reg-timer
-  - PLATFORMIO_PROJECT_DIR=examples/reg-uart
+  - PLATFORMIO_PROJECT_DIR=examples/blink
+  - PLATFORMIO_PROJECT_DIR=examples/timer
+  - PLATFORMIO_PROJECT_DIR=examples/UART1
 
 install:
   - pip install -U https://github.com/OS-Q/S03/archive/master.zip

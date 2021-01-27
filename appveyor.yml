@@ -2,15 +2,9 @@ build: off
 environment:
 
   matrix:
-    - PLATFORMIO_PROJECT_DIR: "examples/arduino-fade-all-pins"
-    - PLATFORMIO_PROJECT_DIR: "examples/arduino-internal-lib"
-    - PLATFORMIO_PROJECT_DIR: "examples/arduino-ping-hc04"
-    - PLATFORMIO_PROJECT_DIR: "examples/native-blink"
-    - PLATFORMIO_PROJECT_DIR: "examples/native-flash"
-    - PLATFORMIO_PROJECT_DIR: "examples/native-uart"
-    - PLATFORMIO_PROJECT_DIR: "examples/reg-blink"
-    - PLATFORMIO_PROJECT_DIR: "examples/reg-timer"
-    - PLATFORMIO_PROJECT_DIR: "examples/reg-uart"
+    - PLATFORMIO_PROJECT_DIR: "examples/blink"
+    - PLATFORMIO_PROJECT_DIR: "examples/timer"
+    - PLATFORMIO_PROJECT_DIR: "examples/UART1"
 
 install:
   - cmd: git submodule update --init --recursive
@@ -20,4 +14,3 @@ install:
 
 test_script:
   - cmd: platformio run -d %PLATFORMIO_PROJECT_DIR%
-

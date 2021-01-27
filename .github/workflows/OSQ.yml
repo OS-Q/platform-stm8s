@@ -30,11 +30,11 @@ jobs:
         uses: actions/setup-python@v1
         with:
           python-version: ${{ matrix.python-version }}
-      - name: Install dependencies
+      - name: Install S03
         run: |
           python -m pip install --upgrade pip
           pip install -U https://github.com/OS-Q/S03/archive/master.zip
-          platformio platform install file://.
-      - name: Build OS-Q
+          pio platform install file://.
+      - name: Build P02
         run: |
-          platformio run -d ${{ matrix.examples }}
+          pio run -d ${{ matrix.examples }}

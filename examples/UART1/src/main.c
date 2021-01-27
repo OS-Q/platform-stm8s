@@ -7,40 +7,11 @@
 *******************************************************************************/
 #include <stdint.h>
 #include <string.h>
-// #include <stdio.h>
 
 #include "main.h"
 
 volatile uint32_t time_ms_cnt=0;
 
-/*******************************************************************************
-**函数信息 ：
-**功能描述 ：
-**输入参数 ：
-**输出参数 ：
-*******************************************************************************/
-void pin_init()
-{
-    GPIOA->ODR = 0x00;
-    GPIOA->DDR = 0xFF;
-    GPIOA->CR1 = 0xFF;
-    GPIOA->CR2 = 0x00;
-
-    GPIOB->ODR = 0x00;
-    GPIOB->DDR = 0xFF;
-    GPIOB->CR1 = 0xCF;
-    GPIOB->CR2 = 0x00;
-
-    GPIOC->ODR = 0x00;
-    GPIOC->DDR = 0xFF;
-    GPIOC->CR1 = 0xFF;
-    GPIOC->CR2 = 0x00;
-
-    GPIOD->ODR = 0x00;
-    GPIOD->DDR = 0xFF;
-    GPIOD->CR1 = 0xFF;
-    GPIOD->CR2 = 0x00;
-}
 
 /*******************************************************************************
 **函数信息 ：
@@ -103,5 +74,12 @@ void uart1_isr(void) __interrupt(18)
     UART1->SR = 0xDF;
 }
 
-#endif /*__UART1_H*/
+#ifdef __PIN_H
+void pin_isr(void) __interrupt(6)
+{
+    // Clear interrupt flag
+    // UART1->SR = 0xDF;
+}
+
+#endif /*__PIN_H*/
 /*---------------------------(C) COPYRIGHT 2021 OS-Q -------------------------*/
