@@ -1,9 +1,9 @@
-
 import sys
 from os.path import join
 from platform import system
 
-from SCons.Script import (AlwaysBuild, COMMAND_LINE_TARGETS, Default,DefaultEnvironment)
+from SCons.Script import (AlwaysBuild, COMMAND_LINE_TARGETS, Default,
+                          DefaultEnvironment)
 
 
 env = DefaultEnvironment()
@@ -23,12 +23,9 @@ env.Replace(
 
     ARFLAGS=["rcs"],
 
-    ASFLAGS=["--xstack","-plosgff","assembler-with-cpp", "-flto"],
+    ASFLAGS=["-x", "assembler-with-cpp", "-flto"],
 
     CFLAGS=[
-        "--stack-auto",
-        "--noinduction",
-        "--use-non-free",
         "-m%s" % board_config.get("build.cpu")
     ],
 
@@ -46,8 +43,8 @@ env.Replace(
 
     LIBPATH=[
         join(env.PioPlatform().get_package_dir("toolchain-sdcc"),
-                "%s" % "lib" if system() == "Windows" else join("share", "sdcc", "lib"),
-                board_config.get("build.cpu"))
+             "%s" % "lib" if system() == "Windows" else join("share", "sdcc", "lib"),
+             board_config.get("build.cpu"))
     ],
 
     LIBS=["stm8"],
@@ -67,9 +64,11 @@ def _ldflags_for_hex(env, ldflags):
     ldflags = ["--out-fmt-ihx" if f == "--out-fmt-elf" else f for f in ldflags]
     return ldflags
 
+
 env.Append(
     ASFLAGS=env.get("CFLAGS", [])[:],
-    __ldflags_for_hex=_ldflags_for_hex
+    __ldflags_for_hex=_ldflags_for_hex,
+    ldflags_for_hex="${__ldflags_for_hex(__env__, LINKFLAGS)}"
 )
 
 # Allow user to override via pre:script
@@ -89,8 +88,7 @@ else:
     target_firm = env.Command(
         join("$BUILD_DIR", "${PROGNAME}.ihx"),
         env['PIOBUILDFILES'],
-        env['LINKCOM'].replace("$LINKFLAGS",
-                                "${__ldflags_for_hex(__env__, LINKFLAGS)}")
+        env['LINKCOM'].replace("$LINKFLAGS", "$ldflags_for_hex")
     )
     env.Depends(target_firm, target_elf)
 
@@ -130,7 +128,7 @@ if upload_protocol == "serial":
 
     upload_actions = [
         env.VerboseAction(env.AutodetectUploadPort,
-                            "Looking for upload port..."),
+                          "Looking for upload port..."),
         env.VerboseAction("$UPLOADCMD", "Uploading $SOURCE")
     ]
 
@@ -156,5 +154,9 @@ else:
     sys.stderr.write("Warning! Unknown upload protocol %s\n" % upload_protocol)
 
 AlwaysBuild(env.Alias("upload", target_firm, upload_actions))
+
+#
+# Setup default targets
+#
 
 Default([target_buildprog, target_size])

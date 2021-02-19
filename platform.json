@@ -37,10 +37,6 @@
     }
   },
   "packages": {
-      "toolchain-sdcc": {
-      "type": "toolchain",
-      "version": "~1.30804.10766"
-    },
     "A14": {
       "type": "framework",
       "optional": true,
@@ -52,6 +48,10 @@
       "optional": true,
       "owner": "OS-Q",
       "version": "https://github.com/OS-Q/N14.git"
+    },
+    "toolchain-sdcc": {
+      "type": "toolchain",
+      "version": "~1.30804.10766"
     },
     "tool-stm8binutils": {
       "type": "uploader",
