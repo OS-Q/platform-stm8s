@@ -1,9 +1,8 @@
-﻿# [P02](https://github.com/OS-Q/P02)
+﻿# [P14](https://github.com/OS-Q/P14)
 
-[![sites](http://182.61.61.133/link/resources/OSQ.png)](http://www.OS-Q.com)
+[![Build Status](https://github.com/OS-Q/P14/workflows/P14/badge.svg)](https://github.com/OS-Q/P14/actions)
+### [简介](https://github.com/OS-Q/P14/wiki)
 
-### [简介](https://github.com/OS-Q/P02/wiki)
-
-[P02](https://github.com/OS-Q/P02) 基于[PlatformIO](https://github.com/platformio/platformio-core) 框架
+[P14](https://github.com/OS-Q/P14) 基于[PlatformIO](https://github.com/platformio/platformio-core) 框架
 
 ### [Q = (OpenSource & OperatingSystem) ](http://www.OS-Q.com)

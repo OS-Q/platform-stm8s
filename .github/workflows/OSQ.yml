@@ -1,4 +1,4 @@
-name: OS-Q
+name: P14
 
 on: [push, pull_request]
 
@@ -37,6 +37,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install -U https://github.com/OS-Q/S03/archive/master.zip
           pio platform install file://.
-      - name: Build P02
+      - name: Build P14
         run: |
           pio run -d ${{ matrix.examples }}
