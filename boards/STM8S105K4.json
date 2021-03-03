@@ -1,7 +1,7 @@
 {
   "build": {
     "core": "sduino",
-    "extra_flags": "-DSTM8S_BLACK -DSTM8S105",
+    "extra_flags": "-DSTM8S105",
     "f_cpu": "16000000L",
     "cpu": "stm8",
     "mcu": "stm8s105k4t6",
