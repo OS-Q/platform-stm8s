@@ -6,7 +6,7 @@ def after_build(source, target, env):
 	isExists=os.path.exists('build')
 	if not isExists:
 		os.mkdir('build')
-	shutil.copy(firmware_source, 'build/native_blink_stm8s003.ihx')
+	shutil.copy(firmware_source, 'build/native_blink_B.ihx')
 
 env.AddPostAction("buildprog", after_build)
 
