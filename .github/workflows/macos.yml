@@ -1,13 +1,13 @@
-name: P14
+name: macos
 
 on: [push, pull_request]
 
 jobs:
   build:
+    runs-on: macos-latest
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
         python-version: [3.7]
         examples:
           - "examples/native-adc"
@@ -23,7 +23,6 @@ jobs:
           - "examples/timer"
           - "examples/uart"
 
-    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
         with:
@@ -32,11 +31,18 @@ jobs:
         uses: actions/setup-python@v1
         with:
           python-version: ${{ matrix.python-version }}
-      - name: Install S03
+
+      - name: Install
         run: |
           python -m pip install --upgrade pip
           pip install -U https://github.com/OS-Q/S03/archive/master.zip
-          pio platform install file://.
-      - name: Build P14
+          qio platform install file://.
+
+      - name: Build
         run: |
-          pio run -d ${{ matrix.examples }}
+          qio run -d ${{ matrix.examples }}
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: macos-build-P14
+          path: ${{ matrix.examples }}/build

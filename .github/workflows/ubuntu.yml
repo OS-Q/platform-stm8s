@@ -1,0 +1,49 @@
+name: ubuntu
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: [3.7]
+        examples:
+          - "examples/native-adc"
+          - "examples/native-opt"
+          - "examples/native-blink"
+          - "examples/native-timer"
+          - "examples/native-uart1"
+          - "examples/native-flash"
+          - "examples/native-eeprom"
+          - "examples/arduino-hc04"
+          - "examples/arduino-internal-libs"
+          - "examples/blink"
+          - "examples/timer"
+          - "examples/uart"
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: "recursive"
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v1
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install
+        run: |
+          pip3 install adafruit-nrfutil uritemplate requests intelhex
+          python -m pip install --upgrade pip
+          pip install -U https://github.com/OS-Q/S03/archive/master.zip
+          qio platform install file://.
+
+      - name: Build
+        run: |
+          qio run -d ${{ matrix.examples }}
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: ubuntu-build-P14
+          path: ${{ matrix.examples }}/build
