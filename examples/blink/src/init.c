@@ -79,8 +79,8 @@ void delay_ms(unsigned int ms)
     unsigned char i;
     while(ms!=0)
     {
-        for(i=0;i<250;i++){}
-        for(i=0;i<75;i++){}
+        for(i=0;i<120;i++){}
+        for(i=0;i<120;i++){}
         ms--;
     }
 }
