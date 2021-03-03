@@ -10,6 +10,9 @@ jobs:
       matrix:
         python-version: [3.7]
         examples:
+          - "examples/blink"
+          - "examples/timer"
+          - "examples/uart"
           - "examples/native-adc"
           - "examples/native-opt"
           - "examples/native-blink"
@@ -19,9 +22,6 @@ jobs:
           - "examples/native-eeprom"
           - "examples/arduino-hc04"
           - "examples/arduino-internal-libs"
-          - "examples/blink"
-          - "examples/timer"
-          - "examples/uart"
 
     steps:
       - uses: actions/checkout@v2

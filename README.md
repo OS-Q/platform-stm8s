@@ -8,7 +8,13 @@
 
 ### [简介](https://github.com/OS-Q/P14/wiki)
 
-[P14](https://github.com/OS-Q/P14) 用于 [STM8S](https://github.com/SoCXin/STM8S) 平台开发
+[P14](https://github.com/OS-Q/P14) 用于 [STM8S](https://www.st.com/zh/microcontrollers-microprocessors/stm8s-series.html) 开发
+
+#### 基本特性
+
+* 直接IO控制
+* UART/IIC通信
+* EEPROM数据存储
 
 #### 辅助工程
 
