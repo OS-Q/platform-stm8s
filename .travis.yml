@@ -3,14 +3,8 @@ python:
   - "3.7"
 
 env:
-  - PLATFORMIO_PROJECT_DIR=examples/native-adc
-  - PLATFORMIO_PROJECT_DIR=examples/native-opt
   - PLATFORMIO_PROJECT_DIR=examples/native-blink
-  - PLATFORMIO_PROJECT_DIR=examples/native-timer
-  - PLATFORMIO_PROJECT_DIR=examples/native-uart1
-  - PLATFORMIO_PROJECT_DIR=examples/native-flash
-  - PLATFORMIO_PROJECT_DIR=examples/native-eeprom
-  - PLATFORMIO_PROJECT_DIR=examples/blink
+  - PLATFORMIO_PROJECT_DIR=examples/arduino-blink
 
 install:
   - pip install -U https://github.com/OS-Q/S03/archive/master.zip
