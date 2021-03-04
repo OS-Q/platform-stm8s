@@ -26,6 +26,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+        env:
+        GITHUB_TOKEN: ${{ secrets.P_REPO_TOKEN }}
         with:
           submodules: "recursive"
           token: ${{ secrets.OSQ_REPO_TOKEN }}
