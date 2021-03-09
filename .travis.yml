@@ -14,4 +14,8 @@ script:
   - platformio run -d $PLATFORMIO_PROJECT_DIR
 
 notifications:
-  email: false
+  email:
+    recipients:
+      - tang@qitas.cn
+    on_success: never # default: change
+    on_failure: always # default: always
