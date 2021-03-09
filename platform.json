@@ -12,7 +12,6 @@
       "dev-platform",
       "OS-Q",
       "STM8S",
-      "MCU",
       "8bit"
   ],
   "repository": {
@@ -44,7 +43,7 @@
     },
     "toolchain-sdcc": {
       "type": "toolchain",
-      "version": "~1.40000.0"
+      "version": "~1.30804.0"
     },
     "tool-stm8binutils": {
       "type": "uploader",
