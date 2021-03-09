@@ -1,6 +1,0 @@
-[submodule "boards"]
-	path = boards
-	url = https://github.com/OS-Q/B14.git
-[submodule ".\\examples\\B"]
-	path = .\\examples\\B
-	url = https://github.com/OS-Q/T14B.git
