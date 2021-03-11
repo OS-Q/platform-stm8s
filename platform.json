@@ -20,6 +20,14 @@
   },
   "frameworks": {
     "arduino": {
+      "package": "framework-arduinoststm8",
+      "script": "builder/frameworks/arduino.py"
+    },
+    "spl": {
+      "package": "framework-ststm8spl",
+      "script": "builder/frameworks/spl.py"
+    },
+    "ino": {
       "package": "A14A",
       "script": "builder/extend/arduino.py"
     },
@@ -41,22 +49,38 @@
       "owner": "OS-Q",
       "version": "https://github.com/OS-Q/E14A.git"
     },
+    "framework-arduinoststm8": {
+      "type": "framework",
+      "optional": true,
+      "owner": "platformio",
+      "version": "0.40.181216"
+    },
+    "framework-ststm8spl": {
+      "type": "framework",
+      "optional": true,
+      "owner": "platformio",
+      "version": "0.20301.181217"
+    },
     "toolchain-sdcc": {
       "type": "toolchain",
-      "version": "~1.30804.0"
+      "owner": "platformio",
+      "version": "~1.30804.10766"
     },
     "tool-stm8binutils": {
       "type": "uploader",
-      "version": "~0.230.0"
+      "owner": "platformio",
+      "version": "0.230.0"
     },
     "tool-stm8tools": {
       "type": "uploader",
       "optional": true,
+      "owner": "platformio",
       "version": "~0.40.181218"
     },
     "tool-openocd": {
       "type": "uploader",
       "optional": true,
+      "owner": "platformio",
       "version": "~2.1000.0"
     }
   }
