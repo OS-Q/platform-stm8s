@@ -1,10 +1,10 @@
 {
   "name": "P14",
   "title": "Platform P14 (STM8S)",
-  "description": "STMicroelectronics base-line 8-bit microcontroller family STM8S.",
+  "description": "STMicroelectronics 8-bit microcontroller STM8S.",
   "homepage": "https://www.st.com/en/microcontrollers/stm8-8-bit-mcus.html",
   "license": "Apache-2.0",
-  "version": "1.0.4",
+  "version": "1.0.3",
   "engines": {
     "platformio": "^5"
   },
@@ -20,26 +20,26 @@
   },
   "frameworks": {
     "arduino": {
-      "package": "A14",
-      "script": "builder/frameworks/arduino.py"
+      "package": "A14A",
+      "script": "builder/extend/arduino.py"
     },
     "native": {
-      "package": "E14",
-      "script": "builder/frameworks/native.py"
+      "package": "E14A",
+      "script": "builder/extend/native.py"
     }
   },
   "packages": {
-    "A14": {
+    "A14A": {
       "type": "framework",
       "optional": true,
       "owner": "OS-Q",
-      "version": "https://github.com/OS-Q/A14.git"
+      "version": "https://github.com/OS-Q/A14A.git"
     },
-    "E14": {
+    "E14A": {
       "type": "framework",
       "optional": true,
       "owner": "OS-Q",
-      "version": "https://github.com/OS-Q/E14.git"
+      "version": "https://github.com/OS-Q/E14A.git"
     },
     "toolchain-sdcc": {
       "type": "toolchain",
