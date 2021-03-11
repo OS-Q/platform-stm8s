@@ -15,11 +15,4 @@
 * UART/IIC通信
 * EEPROM数据存储
 
-#### 辅助工程
-
-* [A14](https://github.com/OS-Q/A14)
-* [E14](https://github.com/OS-Q/E14)
-* [B14](https://github.com/OS-Q/B14)
-* [T14](https://github.com/OS-Q/T14)
-
-### [Q = (OpenSource & OperatingSystem) ](http://www.OS-Q.com)
+### [源圈 OS-Q (Open Source & QA) ](http://www.OS-Q.com)
