@@ -5,3 +5,6 @@
 [submodule "examples/template-B"]
 	path = examples/template-B
 	url = https://github.com/OS-Q/T14B.git
+[submodule "builder/extend"]
+	path = builder/extend
+	url = https://github.com/OS-Q/E14.git
