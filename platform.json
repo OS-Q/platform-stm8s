@@ -31,7 +31,7 @@
       "package": "A14A",
       "script": "builder/extend/A14A.py"
     },
-    "native": {
+    "reg": {
       "package": "E14A",
       "script": "builder/extend/E14A.py"
     }
