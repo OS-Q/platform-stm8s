@@ -29,11 +29,11 @@
     },
     "ino": {
       "package": "A14A",
-      "script": "builder/extend/arduino.py"
+      "script": "builder/extend/A14A.py"
     },
     "native": {
       "package": "E14A",
-      "script": "builder/extend/native.py"
+      "script": "builder/extend/E14A.py"
     }
   },
   "packages": {

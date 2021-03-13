@@ -5,7 +5,6 @@ from platform import system
 from SCons.Script import (AlwaysBuild, COMMAND_LINE_TARGETS, Default,
                             DefaultEnvironment)
 
-
 env = DefaultEnvironment()
 board_config = env.BoardConfig()
 
