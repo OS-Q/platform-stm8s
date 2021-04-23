@@ -18,9 +18,14 @@ jobs:
       fail-fast: false
       matrix:
         example:
+          - "arduino-fade-all-pins"
+          - "arduino-internal-lib"
+          - "arduino-ping-hc04"
+          - "spl-blink"
+          - "spl-flash"
+          - "spl-uart-loopback"
+          - "spl-uart-simple-printf"
           - "native-blink"
-          - "arduino-blink"
-          - "arduino-internal-libs"
 
         os: [ubuntu-latest, windows-latest, macos-latest]
         package:
@@ -118,9 +123,14 @@ jobs:
       fail-fast: false
       matrix:
         example:
+          - "arduino-fade-all-pins"
+          - "arduino-internal-lib"
+          - "arduino-ping-hc04"
+          - "spl-blink"
+          - "spl-flash"
+          - "spl-uart-loopback"
+          - "spl-uart-simple-printf"
           - "native-blink"
-          - "arduino-blink"
-          - "arduino-internal-libs"
 
         os: [ubuntu-latest, windows-latest, macos-latest]
     runs-on: ${{ matrix.os }}

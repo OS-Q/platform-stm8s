@@ -8,7 +8,7 @@ git:
   depth: 1
 
 env:
-  - PLATFORMIO_PROJECT_DIR=examples/template-B
+  - PLATFORMIO_PROJECT_DIR=examples/spl-blink
 
 install:
   - pip install -U https://github.com/OS-Q/M03/releases/latest/download/qio.zip

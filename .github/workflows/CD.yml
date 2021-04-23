@@ -16,8 +16,14 @@ jobs:
       fail-fast: true
       matrix:
         example:
-          - "template-B"
-
+          - "arduino-fade-all-pins"
+          - "arduino-internal-lib"
+          - "arduino-ping-hc04"
+          - "spl-blink"
+          - "spl-flash"
+          - "spl-uart-loopback"
+          - "spl-uart-simple-printf"
+          - "native-blink"
 
     steps:
       - uses: actions/checkout@v2
@@ -228,7 +234,7 @@ jobs:
         id: rebuild
         if: steps.getgh.outputs.status == 'success' && !cancelled()
         run: |
-          qio run -d examples/template-B
+          qio run -d examples/spl-blink
           echo "::set-output name=status::success"
 
       - name: Send Mail

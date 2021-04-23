@@ -2,7 +2,7 @@ build: off
 environment:
 
   matrix:
-    - PLATFORMIO_PROJECT_DIR: "examples/template-B"
+    - PLATFORMIO_PROJECT_DIR: "examples/spl-blink"
 
 platform:
   - x64

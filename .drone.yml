@@ -10,7 +10,7 @@ steps:
   - git submodule update --init --recursive
   - pip install -U https://github.com/OS-Q/M03/releases/latest/download/qio.zip
   - qio platform install file://.
-  - qio run -d examples/template-B
+  - qio run -d examples/spl-blink
 
 - name: PIO
   image: python:3
@@ -20,6 +20,6 @@ steps:
   - git submodule update --init --recursive
   - pip install -U https://github.com/platformio/platformio/archive/develop.zip
   - pio platform install file://.
-  - pio run -d examples/template-B
+  - pio run -d examples/spl-blink
 
 

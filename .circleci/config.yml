@@ -21,7 +21,9 @@ jobs:
       - run:
           name: "Build"
           command: |
-            qio run -d examples/template-B
+            qio run -d examples/spl-blink
+            qio run -d examples/native-blink
+            qio run -d examples/arduino-internal-lib
 
   PIO:
     docker:
@@ -43,8 +45,9 @@ jobs:
       - run:
           name: "Build"
           command: |
-            pio run -d examples/template-B
-
+            pio run -d examples/spl-blink
+            pio run -d examples/native-blink
+            pio run -d examples/arduino-internal-lib
 
 workflows:
     version: 2
