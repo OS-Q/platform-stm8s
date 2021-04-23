@@ -1,9 +1,6 @@
 [submodule "boards"]
 	path = boards
 	url = https://github.com/OS-Q/B14.git
-[submodule "builder/extend"]
-	path = builder/extend
-	url = https://github.com/OS-Q/E14.git
 [submodule "examples/template-B"]
 	path = examples/template-B
 	url = https://github.com/OS-Q/T14B.git
