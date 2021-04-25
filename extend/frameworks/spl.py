@@ -9,7 +9,7 @@ env = DefaultEnvironment()
 platform = env.PioPlatform()
 board_config = env.BoardConfig()
 
-FRAMEWORK_DIR = platform.get_package_dir("framework-ststm8spl")
+FRAMEWORK_DIR = platform.get_package_dir("E14")
 assert isdir(FRAMEWORK_DIR)
 
 
