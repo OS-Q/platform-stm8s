@@ -11,9 +11,8 @@ platform:
 install:
   - cmd: git submodule update --init --recursive
   - cmd: SET PATH=C:\Python37\Scripts;%PATH%
-  - cmd: pip3 install platformio
-  - cmd: pio update
-  - cmd: pio platform install file://.
+  - cmd: pip3 install -U https://github.com/OS-Q/M03/releases/latest/download/qio.zip
+  - cmd: qio platform install file://.
 
 test_script:
-  - cmd: pio run -d %PLATFORMIO_PROJECT_DIR%
+  - cmd: qio run -d %PLATFORMIO_PROJECT_DIR%
