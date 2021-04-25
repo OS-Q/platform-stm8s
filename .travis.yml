@@ -8,11 +8,14 @@ git:
   depth: 1
 
 env:
+  - PLATFORMIO_PROJECT_DIR=examples/native-blink
   - PLATFORMIO_PROJECT_DIR=examples/spl-blink
+  - PLATFORMIO_PROJECT_DIR=examples/arduino-fade-all-pins
 
 install:
-  - pip install -U https://github.com/OS-Q/M03/releases/latest/download/qio.zip
-  - qio platform install file://.
+  - pip install platformio
+    pio update
+  - pio platform install file://.
 
 script:
   - qio run -d $PLATFORMIO_PROJECT_DIR
