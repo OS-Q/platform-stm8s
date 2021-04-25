@@ -7,7 +7,7 @@ env = DefaultEnvironment()
 platform = env.PioPlatform()
 board_config = env.BoardConfig()
 
-FRAMEWORK_DIR = platform.get_package_dir("framework-arduinoststm8")
+FRAMEWORK_DIR = platform.get_package_dir("A14")
 assert os.path.isdir(FRAMEWORK_DIR)
 
 

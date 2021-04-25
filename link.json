@@ -20,11 +20,11 @@
   "version": "2.0.0",
   "frameworks": {
     "arduino": {
-      "package": "framework-arduinoststm8",
+      "package": "A14",
       "script": "extend/frameworks/arduino.py"
     },
     "spl": {
-      "package": "framework-ststm8spl",
+      "package": "E14",
       "script": "extend/frameworks/spl.py"
     }
   },
@@ -37,17 +37,15 @@
         "~1.30901.0"
       ]
     },
-    "framework-arduinoststm8": {
+    "A14": {
       "type": "framework",
       "optional": true,
-      "owner": "platformio",
-      "version": "~0.50.0"
+      "version": "https://github.com/OS-Q/A14.git"
     },
-    "framework-ststm8spl": {
+    "E14": {
       "type": "framework",
       "optional": true,
-      "owner": "platformio",
-      "version": "0.20301.181217"
+      "version": "https://github.com/OS-Q/E14.git"
     },
     "tool-stm8binutils": {
       "type": "uploader",
