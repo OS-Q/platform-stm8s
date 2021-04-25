@@ -104,11 +104,11 @@ jobs:
       - name: Package
         id: package
         run: |
-          echo "Platform P14 for STM8S MCU" >> log.txt
-          echo $(date +"%Y.%m.%d") >> log.txt
-          echo ${GITHUB_REF/refs\/tags\//} >> log.txt
-          echo -e "www.OS-Q.com\n" >> log.txt
-          git log --stat -1 >> log.txt
+          echo "Platform P14 for STM8S MCU" >> qio/log.txt
+          echo $(date +"%Y.%m.%d") >> qio/log.txt
+          echo ${GITHUB_REF/refs\/tags\//} >> qio/log.txt
+          echo -e "www.OS-Q.com\n" >> qio/log.txt
+          git log --stat -1 >> qio/log.txt
           echo ${GITHUB_REF/refs\/tags\//} >> qio/mail.md
           echo $(date +"%Y.%m.%d") >> qio/mail.md
           zip -r package.zip boards builder extend misc link.json link.py platform.json platform.py
@@ -132,7 +132,7 @@ jobs:
           tag_name: ${{ steps.tag.outputs.release_tag }}
           files: |
             ${{ env.FIRMWARE }}/package.zip
-            ${{ env.FIRMWARE }}/log.txt
+            ${{ env.FIRMWARE }}/qio/log.txt
 
       - name: Setup OSS
         uses: Qful/ossutil-action@master
