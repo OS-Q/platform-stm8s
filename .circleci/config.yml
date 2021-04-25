@@ -26,35 +26,10 @@ jobs:
             pio run -d examples/arduino-internal-lib
             pio run -d examples/arduino-ping-hc04
 
-  PIO:
-    docker:
-      - image: python:3
-    steps:
-      - checkout
-      - run:
-          name: "Install"
-          command: |
-            apt update
-            apt install -y git
-            git submodule update --init --recursive
-            python -m pip install --upgrade pip
-            pip install -U https://github.com/platformio/platformio/archive/develop.zip
-            pio platform install file://.
-      - run:
-          name: "Build"
-          command: |
-            pio run -d examples/native-blink
-            pio run -d examples/spl-blink
-            pio run -d examples/spl-flash
-            pio run -d examples/spl-uart-loopback
-            pio run -d examples/spl-uart-simple-printf
-            pio run -d examples/arduino-internal-lib
-            pio run -d examples/arduino-ping-hc04
 
 workflows:
     version: 2
     run_ci:
         jobs:
           - QIO
-          - PIO
 

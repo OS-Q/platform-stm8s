@@ -3,8 +3,7 @@ name: CI
 on:
   push:
     branches:
-      - master
-      - main
+      - qio
     paths-ignore:
       - '**.md'
       - '**/CD.yml'
@@ -132,86 +131,3 @@ jobs:
           password: ${{secrets.MQTT_PASSWORD}}
           topic: ${{github.repository}}/${{github.workflow}}
           message: "QIO failure"
-
-  PIO:
-    strategy:
-      fail-fast: false
-      matrix:
-        example:
-          - "native-blink"
-          - "spl-blink"
-          - "spl-flash"
-          - "spl-uart-loopback"
-          - "spl-uart-simple-printf"
-          - "arduino-fade-all-pins"
-          - "arduino-internal-lib"
-          - "arduino-ping-hc04"
-
-        os: [ubuntu-latest, windows-latest, macos-latest]
-
-    runs-on: ${{ matrix.os }}
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          submodules: "recursive"
-          fetch-depth: 1
-
-      - name: Set up Python
-        uses: actions/setup-python@v1
-        with:
-          python-version: 3.9
-
-      - name: Install PIO
-        run: |
-          python -m pip install --upgrade pip
-          pip install -U https://github.com/platformio/platformio/archive/develop.zip
-          pio platform install file://.
-
-      - name: Build examples
-        id: build
-        if: success()
-        working-directory: examples
-        run: |
-          pio run -d ${{ matrix.example }}
-          echo "::set-output name=status::success"
-
-      - name: Upload
-        if: env.UPLOAD_BUILD
-        uses: actions/upload-artifact@v2
-        with:
-          name: pio_${{ matrix.example }}_${{ matrix.os }}
-          path: examples/${{ matrix.example }}/.pio/build
-
-  pio_pass:
-    needs:
-      - PIO
-    if: success()
-    runs-on: ubuntu-latest
-    steps:
-      - name: notification
-        uses: Qful/mqtt-action@master
-        with:
-          protocol: mqtt
-          host: ${{secrets.MQTT_SERVER}}
-          port: 1883
-          username: ${{secrets.MQTT_USERNAME}}
-          password: ${{secrets.MQTT_PASSWORD}}
-          topic: ${{github.repository}}/${{github.workflow}}
-          message: "PIO success"
-
-  pio_fail:
-    needs:
-      - PIO
-    if: failure()
-    runs-on: ubuntu-latest
-    steps:
-      - name: notification
-        uses: Qful/mqtt-action@master
-        with:
-          protocol: mqtt
-          host: ${{secrets.MQTT_SERVER}}
-          port: 1883
-          username: ${{secrets.MQTT_USERNAME}}
-          password: ${{secrets.MQTT_PASSWORD}}
-          topic: ${{github.repository}}/${{github.workflow}}
-          message: "PIO failure"
