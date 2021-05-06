@@ -6,7 +6,7 @@ os:
 
 git:
   depth: 1
-
+before_install: python -m pip install --upgrade pip
 env:
   - PLATFORMIO_PROJECT_DIR=examples/native-blink
   - PLATFORMIO_PROJECT_DIR=examples/spl-blink
