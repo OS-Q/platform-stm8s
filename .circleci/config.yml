@@ -23,6 +23,7 @@ jobs:
             pio run -d examples/spl-flash
             pio run -d examples/spl-uart-loopback
             pio run -d examples/spl-uart-simple-printf
+            pio run -d examples/arduino-fade-all-pins
             pio run -d examples/arduino-internal-lib
             pio run -d examples/arduino-ping-hc04
 
@@ -48,6 +49,7 @@ jobs:
             pio run -d examples/spl-flash
             pio run -d examples/spl-uart-loopback
             pio run -d examples/spl-uart-simple-printf
+            pio run -d examples/arduino-fade-all-pins
             pio run -d examples/arduino-internal-lib
             pio run -d examples/arduino-ping-hc04
 
@@ -57,4 +59,3 @@ workflows:
         jobs:
           - QIO
           - PIO
-
