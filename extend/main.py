@@ -43,8 +43,8 @@ env.Replace(
 
     LIBPATH=[
         join(env.PioPlatform().get_package_dir("toolchain-sdcc"),
-             "%s" % "lib" if system() == "Windows" else join("share", "sdcc", "lib"),
-             board_config.get("build.cpu"))
+            "%s" % "lib" if system() == "Windows" else join("share", "sdcc", "lib"),
+            board_config.get("build.cpu"))
     ],
 
     LIBS=["stm8"],
