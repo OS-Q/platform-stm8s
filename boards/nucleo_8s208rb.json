@@ -17,6 +17,7 @@
     ]
   },
   "frameworks": [
+    "arduino",
     "spl"
   ],
   "upload": {
@@ -25,6 +26,7 @@
     "protocol": "stlinkv21",
     "protocols": [
       "stlinkv21",
+      "stlinkv2",
       "serial"
     ]
   },

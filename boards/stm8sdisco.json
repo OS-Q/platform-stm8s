@@ -28,6 +28,7 @@
     "protocols": [
       "serial",
       "stlink",
+      "stlinkv21",
       "stlinkv2"
     ]
   },

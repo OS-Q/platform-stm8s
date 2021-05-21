@@ -6,7 +6,7 @@
     "cpu": "stm8",
     "mcu": "stm8s208mbt6",
     "variant": "mb208"
-  }, 
+  },
   "frameworks": [
     "arduino",
     "spl"
@@ -21,6 +21,7 @@
     "protocol": "serial",
     "protocols": [
       "stlinkv2",
+      "stlinkv21",
       "serial"
     ]
   },
