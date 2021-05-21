@@ -1,32 +1,3 @@
-/* SR-HC04 ultrasonic distance Sensor
-
-   This sketch reads a SR-HC04 ultrasonic rangefinder and returns the
-   distance to the closest object in range. To do this, it sends a pulse
-   to the sensor to initiate a reading, then listens for a pulse
-   to return.  The length of the returning pulse is proportional to
-   the distance of the object from the sensor.
-
-   The circuit:
-	* +V connection of the HC-04 attached to +5V
-	* GND connection of the HC-04 attached to ground
-	* Echo connection of the HC-04 attached to digital pin 0/PA1
-	* Trig connection of the HC-04 attached to digital pin 1/PA2
-
-   This sketch is derived from the example sketch for the Ping)) sensor.
-   The Ping)) sensor uses the same pin connection for the trigger and the echo
-   signal, the HC-04 uses two separate connections.
-   http://www.arduino.cc/en/Tutorial/Ping
-
-   created 3 Nov 2008
-   by David A. Mellis
-   modified 30 Aug 2011
-   by Tom Igoe
-   modified 1 Mar 2017 for use with HC-04 and sduino
-   by Michael Mayer
-
-   This example code is in the public domain.
-
- */
 
 #include <Arduino.h>
 
