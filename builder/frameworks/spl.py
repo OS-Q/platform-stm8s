@@ -63,10 +63,6 @@ env.Append(
 )
 
 
-#
-# Target: Build Core Library
-#
-
 env.BuildSources(
     join("$BUILD_DIR", "SPL"),
     join(FRAMEWORK_DIR, "Libraries", "src"),
